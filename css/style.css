@@ -267,6 +267,22 @@ margin:0; }
 
 .form-title {
   margin-bottom: 1rem; }
+.img-upload-div
+{
+  display:flex;
+  box-sizing: border-box;
+  flex-flow:row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.img-upload-title
+{
+  margin-bottom:-1rem;
+}
+.img-input
+{
+  width:80%;
+}
 .img-upload
 {
 
@@ -274,8 +290,8 @@ margin:0; }
   border-radius:5px;
   border:none;
   color:white;
-  width:100%;
-  height:3rem;
+  font-size:1.5rem;
+  width:15%;
 }
 .signup-image {
   margin-top: 45px; }
