@@ -1,5 +1,5 @@
 import {getData,request} from "./ajaxRequestHelper.js"; // exporting ajax helper
-import {name,email} from "./formVerificationHelper.js";
+import {name,email,password} from "./formVerificationHelper.js"; // export form verification helpers
 // constraints
 let nameErrorMsg = "Le nom doit contenir au moins 2 caractères.";
 let emailErrorMsg = "Doit être une adresse email valide";
@@ -60,11 +60,16 @@ facultyInput.blur(() => {
     else
         facultyError.text("");
 });
-
-$("#password").blur(() => {
-    $("#passwordError").text(passwordErrorMsg);
+    // password
+let passwordInput = $("#password");
+let passwordError = $("#passwordError");
+passwordInput.blur(() => {
+    if (!password(passwordInput.val()))
+        passwordError.text(passwordErrorMsg);
+    else
+        passwordError.text("");
 });
-
+    // password confirmation
 $("#repass").blur(() => {
     $("#repassError").text(repassErrorMsg);
 });

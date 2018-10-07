@@ -23,10 +23,8 @@
 		return this.isOk[2]=regEx.test(this.numberInput.value);
 		return true;
 	}
-
-
 	// for the password(at least one lowerCase,one UpperCase,one digit and 8 lenght min)
-	password()
+	passwordStrong()
 	{
 		let regEx = new RegExp("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]))(?=.{8,})");
 		
@@ -34,4 +32,12 @@
 		return this.isOk[3]=regEx.test(this.passwordInput.value);
 		return true;
 	}
- */export {name,email};
+*/
+// for the password(at least 6 lenghts min)
+let password = (passwordVal)=>
+{
+	let regEx = new RegExp("^.{6,}$");
+	return regEx.test(passwordVal);
+
+}
+ export {name,email,password};
