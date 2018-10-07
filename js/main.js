@@ -1,5 +1,5 @@
 import {getData,request} from "./ajaxRequestHelper.js"; // exporting ajax helper
-import {name} from "./formVerificationHelper.js";
+import {name,email} from "./formVerificationHelper.js";
 // constraints
 let nameErrorMsg = "Le nom doit contenir au moins 2 caractères.";
 let emailErrorMsg = "Doit être une adresse email valide";
@@ -11,6 +11,8 @@ let passwordErrorMsg = "Doit contenir au moins 6 caractères";
 let repassErrorMsg = "Doit correspondre au mot de passe entré";
 // constraints
 
+// form validation
+    //name
 let nameInput = $("#name");
 let nameError = $("#nameError");
 nameInput.blur(()=>{
@@ -19,8 +21,14 @@ nameInput.blur(()=>{
  else
     nameError.text("");
 });
-$("#email").blur(() => {
-    $("#emailError").text(emailErrorMsg);
+    //email 
+let emailInput = $("#email");
+let emailError = $("#emailError");
+emailInput.blur(() => {
+    if (!email(emailInput.val()))
+        emailError.text(emailErrorMsg);
+    else
+        emailError.text("");
 });
 $("#number").blur(() => {
     $("#numberError").text(numberErrorMsg);

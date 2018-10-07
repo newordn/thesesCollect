@@ -6,17 +6,14 @@
 		return regEx.test(nameVal);	
 	}
 
-/* 	// for the email
-	email()
+ 	// for the email
+	let email = (emailVal)=>
 	{
 		let regEx = new RegExp("^[a-z0-9_\.-]+@[\da-z\.-]+[\.][a-z\.]{2,6}$");
-
-		if(this.emailInput.value!=null)
-		return this.isOk[1]=regEx.test(this.emailInput.value);
-		return true;
+		return regEx.test(emailVal);
 	}
 
-
+/*
 	// for the number
 	number()
 	{
@@ -37,4 +34,4 @@
 		return this.isOk[3]=regEx.test(this.passwordInput.value);
 		return true;
 	}
- */export {name};
+ */export {name,email};
