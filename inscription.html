@@ -25,41 +25,49 @@
                     <div class="signup-form">
                         <h2 class="form-title">Inscription</h2>
                         <form method="POST" class="register-form" id="register-form">
+                            <span class='error' id="nameError"></span>
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Votre Nom" />
                             </div>
+                            <span class='error' id="emailError"></span>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="email" placeholder="Votre Email" />
                             </div>
+                            <span class='error' id="numberError"></span>
                             <div class="form-group">
-                                <label for="phone"><i class="zmdi zmdi-phone"></i></label>
-                                <input type="phone" name="phone" id="phone" placeholder="Votre Numéro" />
+                                <label for="number"><i class="zmdi zmdi-phone"></i></label>
+                                <input type="number" name="number" id="number" placeholder="Votre Numéro" />
                             </div>
-                            <div class="form-group">
-                                <label for="pays"><i class="zmdi zmdi-flag"></i></label>
-                                <input type="pays" name="pays" id="pays" placeholder="Votre Pays" />
+                             <div class="form-group">
+                                <label for="country"><i class="zmdi zmdi-flag"></i></label>
+                                <input type="country" name="country" id="country" placeholder="Votre Pays" />
                             </div>
+                            <span class='error' id="regionError"></span>
                             <div class="form-group">
                                 <label for="region"><i class="zmdi zmdi-flag"></i></label>
                                 <input type="region" name="region" id="region" placeholder="Votre Région" />
                             </div>
+                            <span class='error' id="universityError"></span>                            
                             <div class="form-group">
                                 <label for="university"><i class="zmdi zmdi-graduation-cap"></i></label>
                                 <input type="university" name="university" id="university" placeholder="Votre Université" />
                             </div>
+                            <span class='error' id="facultyError"></span>
                             <div class="form-group">
                                 <label for="faculty"><i class="zmdi zmdi-graduation-cap"></i></label>
                                 <input type="faculty" name="faculty" id="faculty" placeholder="Votre Faculté" />
                             </div>
+                            <span class='error' id="passwordError"></span>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Mot de Passe" />
+                                <input type="password" name="password" id="password" placeholder="Mot de Passe" />
                             </div>
+                            <span class='error' id="repassError"></span>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Confirmation Mot de Passe" />
+                                <input type="password" id="repass" placeholder="Confirmation Mot de Passe" />
                             </div>
                             <div class="img-upload-div">
                                     <div class="img-upload-title"><i class="zmdi zmdi-photo-size-select-large"></i><span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Votre image</span></div>
