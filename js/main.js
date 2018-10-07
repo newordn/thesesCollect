@@ -70,8 +70,16 @@ passwordInput.blur(() => {
         passwordError.text("");
 });
     // password confirmation
-$("#repass").blur(() => {
-    $("#repassError").text(repassErrorMsg);
+let repassInput = $("#repass");
+let repassError = $("#repassError");  
+    repassInput.blur(() => {
+        console.log(repassInput.val());
+        console.log(passwordInput.val())
+    if(repassInput.val() != passwordInput.val())
+    repassError.text(repassErrorMsg);
+    else
+    $("#repassError").text("");
+
 });
 
 // request to the server to save an user
