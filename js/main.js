@@ -4,9 +4,9 @@ import {name,email} from "./formVerificationHelper.js";
 let nameErrorMsg = "Le nom doit contenir au moins 2 caractères.";
 let emailErrorMsg = "Doit être une adresse email valide";
 let numberErrorMsg = "Ex: +237693063228";
-let regionErrorMsg = "Doit contenir au moins 3 caractères";
-let universityErrorMsg = "Doit contenir au moins 3 caractères";
-let facultyErrorMsg = "Doit contenir au moins 3 caractères";
+let regionErrorMsg = "Doit contenir au moins 2 caractères";
+let universityErrorMsg = "Doit contenir au moins 2 caractères";
+let facultyErrorMsg = "Doit contenir au moins 2 caractères";
 let passwordErrorMsg = "Doit contenir au moins 6 caractères";
 let repassErrorMsg = "Doit correspondre au mot de passe entré";
 // constraints
@@ -33,15 +33,34 @@ emailInput.blur(() => {
 $("#number").blur(() => {
     $("#numberError").text(numberErrorMsg);
 });
-$("#region").blur(() => {
-    $("#regionError").text(regionErrorMsg);
+    // region
+let regionInput = $("#region");
+let regionError = $("#regionError");
+regionInput.blur(() => {
+    if (!name(regionInput.val()))
+        regionError.text(regionErrorMsg);
+    else
+        regionError.text("");
 });
-$("#university").blur(() => {
-    $("#universityError").text(universityErrorMsg);
+    //university
+let universityInput = $("#university");
+let universityError = $("#universityError");
+universityInput.blur(() => {
+    if (!name(universityInput.val()))
+        universityError.text(universityErrorMsg);
+    else
+        universityError.text("");
 });
-$("#faculty").blur(() => {
-    $("#facultyError").text(facultyErrorMsg);
+    //faculty
+let facultyInput = $("#faculty");
+let facultyError = $("#facultyError");
+facultyInput.blur(() => {
+    if (!name(facultyInput.val()))
+        facultyError.text(facultyErrorMsg);
+    else
+        facultyError.text("");
 });
+
 $("#password").blur(() => {
     $("#passwordError").text(passwordErrorMsg);
 });
