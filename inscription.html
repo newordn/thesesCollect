@@ -9,7 +9,7 @@
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-
+    
     <!-- Main css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -24,7 +24,7 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Inscription</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <form method="POST" enctype="multipart/form-data" action="http://192.168.8.102:8080/user/create" class="register-form" id="register-form">
                             <span class='error' id="nameError"></span>
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
@@ -36,13 +36,12 @@
                                 <input type="email" name="email" id="email" placeholder="Votre Email" />
                             </div>
                             <span class='error' id="numberError"></span>
-                            <div class="form-group">
-                                <label for="number"><i class="zmdi zmdi-phone"></i></label>
-                                <input type="number" name="number" id="number" placeholder="Votre Numéro" />
-                            </div>
-                             <div class="form-group">
-                                <label for="country"><i class="zmdi zmdi-flag"></i></label>
-                                <input type="country" name="country" id="country" placeholder="Votre Pays" />
+                            <div class="country">
+                                <select name="country" id="countrySelect">
+                                    <option value="Cameroun">Cameroun</option>
+                                    <option value="Côte d'ivoire">Côte d'ivoire</option>
+                                </select>
+                                <input type="text" name="number" id="number" placeholder="Votre Numéro" value="+237"/>
                             </div>
                             <span class='error' id="regionError"></span>
                             <div class="form-group">
@@ -69,10 +68,11 @@
                                 <label for="repass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" id="repass" placeholder="Confirmation Mot de Passe" />
                             </div>
+                                <div style="margin-bottom:-1.7rem"><i class="zmdi zmdi-photo-size-select-large"></i> </div>
                             <div class="img-upload-div">
-                                    <div class="img-upload-title"><i class="zmdi zmdi-photo-size-select-large"></i><span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Votre image</span></div>
-                                <input class="img-input" type="text" id="image" name="image" value="">
-                                <button class="img-upload">+</button>
+                                <input class="img-input" type="text" id="image"  placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Votre image">
+                                <button class="img-upload" type="button" id="addButton">+</button>
+                                <input type="file" name="image" id="file_image" style="display:none">
                             </div>
                         </form>
                     </div>

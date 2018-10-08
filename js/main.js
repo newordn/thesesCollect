@@ -3,7 +3,6 @@ import {name,email,password} from "./formVerificationHelper.js"; // export form 
 // constraints
 let nameErrorMsg = "Le nom doit contenir au moins 2 caractères.";
 let emailErrorMsg = "Doit être une adresse email valide";
-let numberErrorMsg = "Ex: +237693063228";
 let regionErrorMsg = "Doit contenir au moins 2 caractères";
 let universityErrorMsg = "Doit contenir au moins 2 caractères";
 let facultyErrorMsg = "Doit contenir au moins 2 caractères";
@@ -14,7 +13,7 @@ let repassErrorMsg = "Doit correspondre au mot de passe entré";
 // form validation
     //name
 let nameInput = $("#name");
-let nameError = $("#nameError");
+let nameError = $("#nameError").text(" ");
 nameInput.blur(()=>{
     if(!name(nameInput.val()))
  nameError.text(nameErrorMsg);
@@ -23,19 +22,16 @@ nameInput.blur(()=>{
 });
     //email 
 let emailInput = $("#email");
-let emailError = $("#emailError");
+let emailError = $("#emailError").text(" ");
 emailInput.blur(() => {
     if (!email(emailInput.val()))
         emailError.text(emailErrorMsg);
     else
         emailError.text("");
 });
-$("#number").blur(() => {
-    $("#numberError").text(numberErrorMsg);
-});
     // region
 let regionInput = $("#region");
-let regionError = $("#regionError");
+let regionError = $("#regionError").text(" ");
 regionInput.blur(() => {
     if (!name(regionInput.val()))
         regionError.text(regionErrorMsg);
@@ -44,7 +40,7 @@ regionInput.blur(() => {
 });
     //university
 let universityInput = $("#university");
-let universityError = $("#universityError");
+let universityError = $("#universityError").text(" ");
 universityInput.blur(() => {
     if (!name(universityInput.val()))
         universityError.text(universityErrorMsg);
@@ -53,7 +49,7 @@ universityInput.blur(() => {
 });
     //faculty
 let facultyInput = $("#faculty");
-let facultyError = $("#facultyError");
+let facultyError = $("#facultyError").text(" ");
 facultyInput.blur(() => {
     if (!name(facultyInput.val()))
         facultyError.text(facultyErrorMsg);
@@ -62,7 +58,7 @@ facultyInput.blur(() => {
 });
     // password
 let passwordInput = $("#password");
-let passwordError = $("#passwordError");
+let passwordError = $("#passwordError").text(" ");
 passwordInput.blur(() => {
     if (!password(passwordInput.val()))
         passwordError.text(passwordErrorMsg);
@@ -71,7 +67,7 @@ passwordInput.blur(() => {
 });
     // password confirmation
 let repassInput = $("#repass");
-let repassError = $("#repassError");  
+let repassError = $("#repassError").text(" ");  
     repassInput.blur(() => {
         console.log(repassInput.val());
         console.log(passwordInput.val())
@@ -87,8 +83,29 @@ let form = document.getElementById("register-form");
 $("#submit").click(
     ()=>
     {
-        request("http://192.168.8.103:8080/user/create","post",getData(form))
+        if(nameError.text()==emailError.text()==passwordError.text()==regionError.text()==regionError.text()==universityError.text()==facultyError.text()=="")
+        form.submit();
     }
 )
 
+// country automatical changing indicatif
+let countrySelect = $("#countrySelect");
+countrySelect.change(()=>{
+    if(countrySelect.val()=="Cameroun")
+  $("#number").val("+237");
+    else (countrySelect.val() == "Côte d'ivoire")
+    $("#number").val("+221");
 
+});
+// file picker
+$("#addButton").click(()=>{
+
+ $("#file_image").click();
+ document.getElementById("file_image").addEventListener('change',handleImg,false);
+ function handleImg()
+ {
+     let img = this.files[0];
+     console.log(img);
+     $("#image").val(img.name);
+ }
+});

@@ -280,13 +280,11 @@ margin:0; }
   color:red;
   font-style: italic;
 }
-.img-upload-title
-{
-  margin-bottom:-1rem;
-}
 .img-input
 {
-  width:80%;
+  padding-bottom:0;
+  background-color:transparent;
+  width:76%;
 }
 .img-upload
 {
@@ -341,6 +339,33 @@ figure {
   padding-left: 34px; }
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset;
+}
+.country
+{
+   border:1px solid gray;
+   border-radius: 3px;
+  display:grid;
+  grid-template-columns: auto 1fr;
+  margin-bottom: 1rem;
+}
+.country select
+{
+  padding-right: 2rem;
+  border-top:none;
+  border-left:none;
+  border-bottom:none;
+  text-align: center;
+  color: #212529;
+  vertical-align: middle;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  transition: 0.25s;
+  transition-property:  color, border;
+  
+}
+.country input
+{
+  border:none;
 }
 .register-form {
   width: 100%; }
