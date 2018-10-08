@@ -1,2 +1,2 @@
 # thesesCollect
-An App to get doctorat theses and masters themes 
+An App to collect doctorat theses and masters themes from an intuitivue and beautiful interface. 
