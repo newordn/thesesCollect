@@ -1,0 +1,34 @@
+html,body,div
+{
+    height: 100%;
+    width: 100%;
+    margin:0 !important;
+}
+.main
+{
+    padding:0 !important; 
+}
+.nav
+{
+    
+    height: 10%;
+    background-color:white;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.content
+{
+    background-color:blue;
+}
+select
+{
+    border:none;
+    outline: none;
+}
+.profile-img
+{
+    border-radius: 50%;
+    width:46px;
+    height:46px;
+}
