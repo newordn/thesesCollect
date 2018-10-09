@@ -9,14 +9,15 @@
     
     <!-- Title Page-->
     <title>Theses Collection</title>
-    <link href="css/dashboard.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href="css/dashboard.css" rel="stylesheet">
         <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 </head>
 
 <body class="row">
-    <div class="col-2" style="background-color:black"></div>     
-    <div class="col main" style="background-color:red">
+    <div class="col-2 sidebar" ></div>     
+    <div class="col main" >
         <nav class="nav" style="width:100%">
             <img class="profile-img" src="images/avatar.png" alt="avatar">
             <select>
@@ -24,7 +25,70 @@
                 <option>Deconnexion</option>
             </select>
         </nav>
-        <div class="content"></div>
+        <div class="row content">
+            <div class="col-2 text-center">
+                <img class="profile-img-1" src="images/avatar.png" alt="avatar">
+                <strong>Neword Orquel</strong>
+                <form style="display:none">
+                    <input type="radio" name="role" value="root">
+                    <input type="radio" name="role" value="administrator">
+                    <input type="radio" name="role" value="user">
+                </form>
+            </div>
+            <div class="col-10">
+<form method="POST" enctype="multipart/form-data" class=" profil-form card">
+    <div class="row">
+        <div class="col-6">
+            <span class='error' id="nameError"></span>
+            <input type="text" name="name" id="name" placeholder="Votre Nom" />
+        </div>
+        <div class="col-6">
+            <span class='error' id="emailError"></span>
+            <input type="email" name="email" id="email" placeholder="Votre Email" />
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-6">
+            <div class="country">
+                <select name="country" id="countrySelect">
+                    <option value="Cameroun">Cameroun</option>
+                    <option value="Côte d'ivoire">Côte d'ivoire</option>
+                </select>
+                <input type="text" name="number" id="number" placeholder="Votre Numéro" value="+237" />
+            </div>
+        </div>
+        <div class="col-6">
+            <span class='error' id="regionError"></span>
+            <input type="region" name="region" id="region" placeholder="Votre Région" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <span class='error' id="universityError"></span>
+            <input type="university" name="university" id="university" placeholder="Votre Université" />
+        </div>
+        <div class="col-6">
+            <span class='error' id="facultyError"></span>
+            <input type="faculty" name="faculty" id="faculty" placeholder="Votre Faculté" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <span class='error' id="passwordError"></span>
+            <input type="password" name="password" id="password" placeholder="Mot de Passe" />
+        </div>
+        <div class="col-6">
+            <span class='error' id="repassError"></span>
+            <input type="password" id="repass" placeholder="Confirmation Mot de Passe" />
+        </div>
+    </div>
+   
+</form>
+    <div class="save-button-div">
+        <button class="btn btn-success save-button"><i class="zmdi zmdi-check"></i></button>
+    </div>
+            </div>
+        </div>
     </div>
     <script src="js/dashboard.js"></script>
 </body>

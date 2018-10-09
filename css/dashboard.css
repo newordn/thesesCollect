@@ -1,8 +1,10 @@
-html,body,div
+@import url('./font.css');
+html,body
 {
     height: 100%;
     width: 100%;
     margin:0 !important;
+    font-family: Poppins;
 }
 .main
 {
@@ -10,25 +12,83 @@ html,body,div
 }
 .nav
 {
-    
-    height: 10%;
-    background-color:white;
+   border-bottom: 1px solid rgb(220,220,220); 
+    height: 8%;
     display:flex;
     justify-content: flex-end;
     align-items: center;
+    padding:1rem;
+}
+.save-button-div
+{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin-top:1rem;
+}
+.save-button
+{
+    width:5rem;
+}
+.sidebar
+{
+    border-right: 1px solid rgb(220,220,220);
 }
 .content
 {
-    background-color:blue;
+    padding:1rem;
+}
+.profil-form
+{
+    padding:2rem;
+    margin-top:5rem;
+}
+.profil-form input
+{
+    width:100%;
+    border-radius: 5px;
+    border:1px solid gray;
+    padding:.8rem;
+    margin-bottom:1.5rem;
 }
 select
 {
     border:none;
     outline: none;
 }
+
 .profile-img
 {
     border-radius: 50%;
     width:46px;
     height:46px;
+}
+.profile-img-1
+{
+    border-radius: 50%;
+    width:10rem;
+    height:10rem;
+}
+.country 
+{
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 3.2rem;
+    
+}
+.country select
+{
+    width:25%;
+    color:gray;
+}
+.country input
+{
+    background-color:transparent;
+    color:gray;
+    width:72.3%;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-right:none;
+    border-top:none;
+    border-bottom:none;
 }
