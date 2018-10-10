@@ -1,4 +1,3 @@
-import {getData,request} from "./ajaxRequestHelper.js"; // exporting ajax helper
 import {name,email,password} from "./formVerificationHelper.js"; // export form verification helpers
 // constraints
 let nameErrorMsg = "Le nom doit contenir au moins 2 caractères.";
@@ -79,14 +78,26 @@ let repassError = $("#repassError").text(" ");
 });
 
 // request to the server to save an user
-let form = document.getElementById("register-form"); 
+let form = document.getElementById("register-form");
+let form1 = document.getElementById("login-form");
+
+// form registration and updating
 $("#submit").click(
     ()=>
     {
-        if(nameError.text()==emailError.text()==passwordError.text()==regionError.text()==regionError.text()==universityError.text()==facultyError.text()=="")
+        
+        if (email(emailInput.val()) && password(passwordInput.val()) && name(nameInput.val()) && name(regionInput.val()) && name(universityInput.val()) && name(facultyInput.val()))
         form.submit();
     }
 )
+// form login
+$("#submit-login").click(
+    () => {
+        if (email(emailInput.val())&& password(passwordInput.val()))
+            form1.submit();
+    }
+)
+
 
 // country automatical changing indicatif
 let countrySelect = $("#countrySelect");
@@ -109,3 +120,5 @@ $("#addButton").click(()=>{
      $("#image").val(img.name);
  }
 });
+
+

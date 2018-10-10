@@ -60,8 +60,37 @@ select
 .profile-img
 {
     border-radius: 50%;
-    width:46px;
-    height:46px;
+    width:32px;
+    height:32px;
+}
+.profile-img-1:hover
+{
+    opacity: 0.3;
+}
+.profile-img-div
+{
+    position: relative;
+}
+.roles
+{
+    border:1px solid rgb(220,220,220);
+    
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+.roles-radio input
+{
+    width:1rem;
+    height:1.7rem;
+}
+.upload
+{
+    position: absolute;
+    left: 40%;
+    top:30%;
+    opacity:0;
+    font-size:4rem;
 }
 .profile-img-1
 {
@@ -91,4 +120,9 @@ select
     border-right:none;
     border-top:none;
     border-bottom:none;
+}
+.error
+{
+  color:red;
+  font-style: italic;
 }
