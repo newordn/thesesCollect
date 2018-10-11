@@ -13,11 +13,13 @@ html,body
 .nav
 {
    border-bottom: 1px solid rgb(220,220,220); 
-    height: 8%;
+    height: 4rem;
+    background-color: #5d99c6;
     display:flex;
     justify-content: flex-end;
     align-items: center;
     padding:1rem;
+    padding-left: 0 !important;
 }
 .save-button-div
 {
@@ -33,10 +35,20 @@ html,body
 .sidebar
 {
     border-right: 1px solid rgb(220,220,220);
+    background-color: #5d99c6;
+    padding:0 !important;
+}
+.log-out
+{
+    color:white;
+    background:transparent;
+    margin-left:.5rem;
+    margin-right:.5rem;
 }
 .content
 {
-    padding:1rem;
+    padding:2rem;
+    box-sizing: border-box;
 }
 .profil-form
 {
@@ -67,6 +79,37 @@ select
 {
     opacity: 0.3;
 }
+.sidebar-items
+{
+    display:flex;
+    flex-flow: column wrap;
+    width:100%;
+    
+}
+.sidebar-items button
+{
+    margin-top:4rem;
+    background-color:transparent;
+    margin-bottom: 4rem;
+    height: 4rem;
+    border:none;
+    box-shadow: 0 0 3px white;
+    line-height: 3rem;
+    color:white;
+    width:100%;
+}
+.sidebar-items button:hover
+{
+    opacity:0.3;
+}
+.sidebar-items button a
+{
+    color:white;
+}
+.sidebar-items button a:hover
+ {
+     text-decoration: none;
+ }
 .profile-img-div
 {
     position: relative;
@@ -125,4 +168,15 @@ input:-webkit-autofill {
 {
   color:red;
   font-style: italic;
+} 
+.logo
+{
+    width:8rem;
+    height: 4rem;
+} 
+.logo-div
+{
+    background-color: rgb(195,195,195);
+    padding:0 !important;
+    text-align: center;
 }
