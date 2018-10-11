@@ -1,0 +1,14 @@
+.addButton
+{
+    position:fixed;
+    bottom:1rem;
+    right:8%;
+}
+.add-these-form input
+{
+    width:100%;
+}
+.add-these-form
+{
+    padding:2rem;
+}

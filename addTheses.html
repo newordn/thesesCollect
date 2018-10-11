@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Neword">
+
+    <!-- Title Page-->
+    <title>Theses Collection</title>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/addTheses.css" rel="stylesheet">
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+<body class="row">
+    <div class="col-2 sidebar">
+        <div class="logo-div"><img alt="logo" class="logo" src="images/logo.png"></div>
+        <div class="sidebar-items">
+            <a href="/theses"><button id="thesesButton">Thèses</button></a>
+            <a href="/users"><button id="usersLink">Utilisateurs</button></a>
+            <a href="/stats"><button id="statsLink">Statistiques</button></a>
+        </div>
+    </div>
+    <div class="col main">
+        <nav class="nav" style="width:100%">
+            <div>
+                <img class="profile-img" src="images/avatar.png" alt="avatar">
+            </div>
+            <select class="log-out">
+                <option>Neword Orquel</option>
+                <option>Deconnexion</option>
+            </select>
+        </nav>
+        <div class="row content">
+            <div class=" modal fade" id="addThese" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <form class="modal-content add-these-form card" enctype="multipart/form-data" method="post" action="http://192.168.8.100:8080/user/post/create">
+                        <span class='error' id="universityError"></span>
+                        <div class="form-group">
+                            <input type="text" name="university" id="university" placeholder="Université/Ecole" />
+                        </div>
+                        
+                        <span class='error' id="facultyError"></span>
+                        <div class="form-group">
+                            <input type="text" name="faculty" id="faculty" placeholder="Faculté/Discipline" />
+                        </div>
+                        <span class='error' id="optionError"></span>
+                        <div class="form-group">
+                            <input type="text" name="option" id="option" placeholder="Option" />
+                        </div>
+                        <span class='error' id="levelError"></span>
+                        <div class="form-group">
+                            <input type="text" name="level" id="level" placeholder="Niveau" />
+                        </div>
+                        <span class='error' id="subjectError"></span>
+                        <div class="form-group">
+                            <input type="text" name="subject" id="subject" placeholder="Sujet/Thème" />
+                        </div>
+                        <span class='error' id="abstractError"></span>
+                        <div class="form-group">
+                            <input type="text" name="abstract" id="abstract" placeholder="Sommaire" />
+                        </div>
+                        <span class='error' id="regionError"></span>
+                        <div class="form-group">
+                            <input type="text" name="region" id="region" placeholder="Région" />
+                        </div>
+                        <span class='error' id="studentError"></span>
+                        <div class="form-group">
+                            <input type="text" name="student" id="student" placeholder="Nom de l'étudiant" />
+                        </div>
+                        <span class='error' id="profError"></span>
+                        <div class="form-group">
+                            <input type="text" name="prof" id="prof" placeholder="Nom de l'encadreur/prof" />
+                        </div>
+                        <span class='error' id="workChiefError"></span>
+                        <div class="form-group">
+                            <input type="text" name="workChief" id="workChief" placeholder="Nom du chef des travaux" />
+                        </div>
+                        <span class='error' id="assistantError"></span>
+                        <div class="form-group">
+                            <input type="text" name="assistant" id="assistant" placeholder="Nom de l'assistant" />
+                        </div>
+                        <span class='error' id="bibliographyError"></span>
+                        <div class="form-group">
+                            <input type="text" name="bibliography" id="bibliography" placeholder="Bibliographie" />
+                        </div>
+                        <span class='error' id="libraryError"></span>
+                        <div class="form-group">
+                            <input type="text" name="library" id="library" placeholder="Bibliothèque" />
+                        </div>
+                        <div class="form-group form-button" >
+                            <input type="submit" id="submit" style="width:100%;" name="saveThese" id="saveThese" class="form-submit" value="Valider" />
+                        </div>
+                    </form>
+                </div>
+            </div> 
+        </div>
+    </div>
+    </div>
+    <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addThese">
+        <i class="zmdi zmdi-plus"></i>
+        </i>
+    </button>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+
+                </body>
+
+</html>
