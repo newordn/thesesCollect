@@ -17,7 +17,7 @@
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
 <body class="row">
-    <div class="col-2 sidebar">
+    <div class="col-1 sidebar">
         <div class="logo-div"><img alt="logo" class="logo" src="images/logo.png"></div>
         <div class="sidebar-items">
             <a href="/theses"><button id="thesesButton">Thèses</button></a>
@@ -36,6 +36,34 @@
             </select>
         </nav>
         <div class="row content">
+            <table class="table table-bordered">
+                 <thead>
+                     <tr>
+                        <th>Numéro</th>
+                        <th>Université</th>
+                        <th>Faculté/Ecole</th>
+                        <th>Niveau</th>
+                        <th>Thème</th>
+                        <th>Année</th>
+                        <th>Action</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                        <td>1</td>
+                        <td>Université</td>
+                        <td>Faculté/Ecole</td>
+                        <td>Niveau</td>
+                        <td>Thème</td>
+                        <td>Année</td>
+                        <td class="text-center">
+                            <i class="zmdi zmdi-delete"></i>&nbsp;&nbsp;
+                            <i class="zmdi zmdi-brush"></i>&nbsp;&nbsp;
+                            <i class="zmdi zmdi-eye"></i>
+                        </td>
+                     </tr>
+                 </tbody>
+            </table>
             <div class=" modal fade" id="addThese" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <form class="modal-content add-these-form card" enctype="multipart/form-data" method="post" action="http://192.168.8.100:8080/user/post/create">
@@ -43,7 +71,7 @@
                         <div class="form-group">
                             <input type="text" name="university" id="university" placeholder="Université/Ecole" />
                         </div>
-                        
+            
                         <span class='error' id="facultyError"></span>
                         <div class="form-group">
                             <input type="text" name="faculty" id="faculty" placeholder="Faculté/Discipline" />
@@ -92,24 +120,23 @@
                         <div class="form-group">
                             <input type="text" name="library" id="library" placeholder="Bibliothèque" />
                         </div>
-                        <div class="form-group form-button" >
-                            <input type="submit" id="submit" style="width:100%;" name="saveThese" id="saveThese" class="form-submit" value="Valider" />
+                        <div class="form-group form-button">
+                            <input type="submit" id="submit" style="width:100%;" name="saveThese" id="saveThese" class="form-submit"
+                                value="Valider" />
                         </div>
                     </form>
                 </div>
-            </div> 
+            </div>
         </div>
+        <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addThese">
+            <i class="zmdi zmdi-plus"></i>
+            </i>
+        </button>
     </div>
-    </div>
-    <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addThese">
-        <i class="zmdi zmdi-plus"></i>
-        </i>
-    </button>
-
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
 
-                </body>
+</body>
 
 </html>
