@@ -25,3 +25,19 @@ $('input:radio[name="role"]').change(
             console.log("root");
         }
         });
+
+// handling bibliography and library adding
+ // libray
+$("#confirmLibraryAdding").click(()=>{
+    let libVal= $("#library").val();
+    $("#library").val( libVal + ($("#libraryContent").val()))
+    $("#libraryList").append('<li class="list-group-item">'+ 
+    $("#libraryContent").val()+'</li>');
+})
+// bibliography
+$("#confirmBibliographyAdding").click(() => {
+    let biblioVal = $("#bibliographyAuthor").val() + ":" + $("#bibliographyTitle").val() + ":" + $("#bibliographyContent").val() ;
+    $("#bibliography").val(biblioVal + ($("#bibliography").val()))
+    $("#bibliographyList").append('<li class="list-group-item">' +
+        $("#bibliographyTitle").val() + '</li>');
+})
