@@ -103,10 +103,14 @@ $("#submit-login").click(
 let countrySelect = $("#countrySelect");
 countrySelect.change(()=>{
     if(countrySelect.val()=="Cameroun")
-  $("#number").val("+237");
-    else (countrySelect.val() == "Côte d'ivoire")
-    $("#number").val("+221");
+    {
 
+        $("#number").val("+237");
+    }
+    else if (countrySelect.val() == "Côte d'ivoire")
+    {
+        $("#number").val("+221");
+    }
 });
 // file picker
 $("#addButton").click(()=>{
