@@ -1,0 +1,13 @@
+.user-name
+{
+    font-weight: bold;
+    font-style: italic;
+}
+.user-avatar
+{
+    height: 10rem;
+}
+.user:hover
+{
+    opacity:0.5;
+}
