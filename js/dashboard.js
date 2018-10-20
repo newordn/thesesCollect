@@ -41,3 +41,14 @@ $("#confirmBibliographyAdding").click(() => {
     $("#bibliographyList").append('<li class="list-group-item">' +
         $("#bibliographyTitle").val() + '</li>');
 })
+// file picker
+$("#addButton").click(() => {
+
+    $("#abstract_file").click();
+    document.getElementById("abstract_file").addEventListener('change', handleImg, false);
+    function handleImg() {
+        let img = this.files[0];
+        console.log(img);
+        $("#abstract").val(img.name);
+    }
+});
