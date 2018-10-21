@@ -30,25 +30,29 @@ $('input:radio[name="role"]').change(
  // libray
 $("#confirmLibraryAdding").click(()=>{
     let libVal= $("#library").val();
-    $("#library").val( libVal + ($("#libraryContent").val()))
+    $("#library").val( libVal + ($("#libraryContent").val())+";")
     $("#libraryList").append('<li class="list-group-item">'+ 
     $("#libraryContent").val()+'</li>');
+    $("#library").attr("value", $("#library").val())
 })
 // bibliography
 $("#confirmBibliographyAdding").click(() => {
-    let biblioVal = $("#bibliographyAuthor").val() + ":" + $("#bibliographyTitle").val() + ":" + $("#bibliographyContent").val() ;
+    let biblioVal = $("#bibliographyAuthor").val() + ":" + $("#bibliographyTitle").val() + ":" + $("#bibliographyContent").val() +";" ;
     $("#bibliography").val(biblioVal + ($("#bibliography").val()))
     $("#bibliographyList").append('<li class="list-group-item">' +
         $("#bibliographyTitle").val() + '</li>');
+
+$("#bibliography").attr("value", $("#bibliography").val())
 })
+
 // file picker
 $("#addButton").click(() => {
 
     $("#abstract_file").click();
-    document.getElementById("abstract_file").addEventListener('change', handleImg, false);
-    function handleImg() {
-        let img = this.files[0];
-        console.log(img);
-        $("#abstract").val(img.name);
-    }
+document.getElementById("abstract_file").addEventListener('change', handleImg, false);
+function handleImg() {
+    let img = this.files[0];
+    console.log(img);
+    $("#abstract").val(img.name);
+}
 });
