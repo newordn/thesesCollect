@@ -58,7 +58,7 @@
                             <td th:text="${these.faculty}">Faculté/Ecole</td>
                             <td th:text="${these.level}">Niveau</td>
                             <td th:text="${these.subject}">Thème</td>
-                            <td th:text="${these.dateThese}">Année</td>
+                            <td th:text="${these.theseDate}">Année</td>
                             <td>
                                 <a th:href="${these.id}" alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <i class="zmdi zmdi-eye" data-toggle="modal" data-target="#detail"></i>
@@ -108,7 +108,7 @@
                         </div>
                         <div class="form-group">
                             <span class='error' id="dateError"></span>
-                            <input type="text" name="dateThese" id="dateThese" placeholder="Date" />
+                            <input type="text" name="theseDate" id="dateThese" placeholder="Date" />
                         </div>
                         <div class="img-upload-div">
                             <input class="img-input" type="text" id="abstract" placeholder="Sommaire">
