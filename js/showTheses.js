@@ -27,7 +27,7 @@ for(let i=0;i<bibliography.length;i+=3)
 {
     $("#detailBibliography").append("<li class='list-group-item'>" + bibliography[i] + "</li>");
 }
-let library = data.library.split(":");
+let library = data.library.split(";");
     for (let i = 0; i < library.length;i ++) {
         $("#detailLibrary").append("<li class='list-group-item'>" + library[i] + "</li>");
     }
