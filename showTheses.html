@@ -54,13 +54,13 @@
                     <tbody>
                         <tr th:each="these, status: ${theses}">
                             <td th:text="${status.index}"></td>
-                            <td th:text="${these.university}">Université</td>
-                            <td th:text="${these.faculty}">Faculté/Ecole</td>
-                            <td th:text="${these.level}">Niveau</td>
-                            <td th:text="${these.subject}">Thème</td>
-                            <td th:text="${these.theseDate}">Année</td>
+                            <td th:text="${these.university}"></td>
+                            <td th:text="${these.faculty}"></td>
+                            <td th:text="${these.level}"></td>
+                            <td th:text="${these.subject}"></td>
+                            <td th:text="${these.theseDate}"></td>
                             <td>
-                                <a th:href="${these.id}" alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a th:href="${these.id}" href="#" alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <i class="zmdi zmdi-eye" data-toggle="modal" data-target="#detail"></i>
                             </td>
                         </tr>
@@ -79,8 +79,8 @@
             </i>
         </button>
 
-    <!--addThese-->
-    <div class=" modal fade" id="addThese" tabindex="-1" role="dialog">
+        <!--addThese-->
+        <div class=" modal fade" id="addThese" tabindex="-1" role="dialog">
         <div class=" modal-dialog-centered" style="box-sizing: content-box" role="document">
             <form class="add-these-form card text-center" enctype="multipart/form-data" method="post" action="http://192.168.8.100:8080/user/post/create">
                 <div class="row">
@@ -167,8 +167,8 @@
                 </div>
             </form>
         </div>
-    </div>
-    <!-- addThese-->
+        </div>
+        <!-- addThese-->
         <!-- addBibliography-->
             <div class=" modal fade" id="addBibliography" tabindex="-2" role="dialog">
                 <div class=" modal-dialog  modal-dialog-centered" style="box-sizing: content-box" role="document">
