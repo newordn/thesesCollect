@@ -52,15 +52,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Université</td>
-                            <td>Faculté/Ecole</td>
-                            <td>Niveau</td>
-                            <td>Thème</td>
-                            <td>Année</td>
+                        <tr th:each="these, status: ${theses}">
+                            <td th:text="${status.index}"></td>
+                            <td th:text="${these.university}">Université</td>
+                            <td th:text="${these.faculty}">Faculté/Ecole</td>
+                            <td th:text="${these.level}">Niveau</td>
+                            <td th:text="${these.subject}">Thème</td>
+                            <td th:text="${these.dateThese}">Année</td>
                             <td>
-                                <a href="/user/update/1" alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a th:href="${these.id}" alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <i class="zmdi zmdi-eye" data-toggle="modal" data-target="#detail"></i>
                             </td>
                         </tr>
