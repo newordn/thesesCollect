@@ -149,7 +149,7 @@
                 </div>
             <!--pagination-->
             <div th:if="${theses.totalPages > 0}" class="pagination row justify-content-end" th:each="pageNumber : ${pageNumbers}">
-                <a th:href="@{/these(size=${theses.size}, page=${pageNumber})}" th:text=${pageNumber} th:class="${pageNumber==bookPage.number + 1} ? active"></a>
+                <a th:href="@{/these(size=${theses.size}, page=${pageNumber})}" th:text=${pageNumber} th:class="${pageNumber==thesesPage.number + 1} ? active"></a>
             </div>
             <!--pagination-->
             </div>
