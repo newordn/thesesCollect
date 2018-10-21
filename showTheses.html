@@ -49,41 +49,41 @@
     </nav>
     <!-- navigation -->
     <!-- showing theses-->
-    <div class="row content">
-        <table class="table table-bordered text-center">
-            <thead>
-            <tr>
-                <th>Numéro</th>
-                <th>Université</th>
-                <th>Faculté/Ecole</th>
-                <th>Niveau</th>
-                <th>Thème</th>
-                <th>Année</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="these, status: ${theses}">
-                <td th:text="${status.index+1}"></td>
-                <td th:text="${these.university}"></td>
-                <td th:text="${these.faculty}"></td>
-                <td th:text="${these.level}"></td>
-                <td th:text="${these.subject}"></td>
-                <td th:text="${these.theseDate}"></td>
-                <td>
-                    <a th:href="${these.theseId}" href="#" alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="zmdi zmdi-eye" data-toggle="modal" data-target="#detail"></i>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="row content">
+            <table class="table table-bordered text-center">
+                <thead>
+                <tr>
+                    <th>Numéro</th>
+                    <th>Université</th>
+                    <th>Faculté/Ecole</th>
+                    <th>Niveau</th>
+                    <th>Thème</th>
+                    <th>Année</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="these, status: ${theses}">
+                    <td th:text="${status.index+1}"></td>
+                    <td th:text="${these.university}"></td>
+                    <td th:text="${these.faculty}"></td>
+                    <td th:text="${these.level}"></td>
+                    <td th:text="${these.subject}"></td>
+                    <td th:text="${these.theseDate}"></td>
+                    <td>
+                        <a th:href="${these.theseId}"  alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a th:href="${these.theseId}" class="detailLink" alt="detail"><i class="zmdi zmdi-eye" data-toggle="modal" data-target="#detail"></i></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
 
-        <!--pagination-->
-        <div th:if="${theses.totalPages > 0}" class="pagination row justify-content-end" th:each="pageNumber : ${pageNumbers}">
-            <a th:href="@{/these(size=${theses.size}, page=${pageNumber})}" th:text=${pageNumber} th:class="${pageNumber==theses.number + 1} ? active"></a>
-        </div>
-        <!--pagination-->
-    </div>
+            <!--pagination-->
+            <div th:if="${theses.totalPages > 0}" class="pagination row justify-content-end" th:each="pageNumber : ${pageNumbers}">
+                <a th:href="@{/these(size=${theses.size}, page=${pageNumber})}" th:text=${pageNumber} th:class="${pageNumber==theses.number + 1} ? active"></a>
+            </div>
+            <!--pagination-->
+     </div>
     <!-- showing theses-->
     <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addThese">
         <i class="zmdi zmdi-plus"></i>
@@ -309,10 +309,12 @@
     <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
     <script th:src="@{/vendor/bootstrap-4.1/bootstrap.min.js}"></script>
     <script th:src="@{/js/dashboard.js}"></script>
+    <script th:src="@{/js/showTheses.js}"></script>
     
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <script src="/js/dashboard.js"></script>
+    <script src="/js/showTheses.js"></script>
     <!-- scripts-->
 
 </body>
