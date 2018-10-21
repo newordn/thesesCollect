@@ -28,15 +28,17 @@
         </div>
     <!-- sidebar-->
     <div class="col main">
-        <nav class="nav" style="width:100%">
+        <!--navigation -->
+            <nav class="nav" style="width:100%">
             <div>
-                <img class="profile-img" src="images/avatar.png" alt="avatar">
+                <img class="profile-img" th:src="${avatar}" alt="avatar">
             </div>
             <select class="log-out">
-                <option>Neword Orquel</option>
+                <option th:text="${name}"></option>
                 <option>Deconnexion</option>
             </select>
-        </nav>
+            </nav>
+        <!-- navigation -->
         <!-- showing theses-->
             <div class="row content">
                 <table class="table table-bordered text-center">
