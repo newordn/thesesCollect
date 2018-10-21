@@ -26,15 +26,15 @@
 </head>
 <body class="row">
 <!-- sidebar-->
-    <div class="col-1 sidebar">
-        <div class="logo-div"><img alt="logo" class="logo" th:src="@{/images/logo.png}" src="./images/logo.png"</div>
-        <div class="sidebar-items">
+<div class="col-1 sidebar">
+    <div class="logo-div"><img alt="logo" class="logo" th:src="@{/images/logo.png}" src="./images/logo.png"</div>
+    <div class="sidebar-items">
         <a href="/theses"><button id="thesesButton">Thèses</button></a>
         <a href="/users"><button id="usersLink">Utilisateurs</button></a>
         <a href="/stats"><button id="statsLink">Statistiques</button></a>
-        </div>
-        </div>
     </div>
+</div>
+</div>
 <!-- sidebar-->
 <div class="col main">
     <!--navigation -->
@@ -49,41 +49,41 @@
     </nav>
     <!-- navigation -->
     <!-- showing theses-->
-        <div class="row content">
-            <table class="table table-bordered text-center">
-                <thead>
-                <tr>
-                    <th>Numéro</th>
-                    <th>Université</th>
-                    <th>Faculté/Ecole</th>
-                    <th>Niveau</th>
-                    <th>Thème</th>
-                    <th>Année</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="these, status: ${theses}">
-                    <td th:text="${status.index+1}"></td>
-                    <td th:text="${these.university}"></td>
-                    <td th:text="${these.faculty}"></td>
-                    <td th:text="${these.level}"></td>
-                    <td th:text="${these.subject}"></td>
-                    <td th:text="${these.theseDate}"></td>
-                    <td>
-                        <a th:href="${these.theseId}"  alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a th:href="${these.theseId}" class="detailLink" alt="detail"><i class="zmdi zmdi-eye" data-toggle="modal" data-target="#detail"></i></a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+    <div class="row content">
+        <table class="table table-bordered text-center">
+            <thead>
+            <tr>
+                <th>Numéro</th>
+                <th>Université</th>
+                <th>Faculté/Ecole</th>
+                <th>Niveau</th>
+                <th>Thème</th>
+                <th>Année</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="these, status: ${theses}">
+                <td th:text="${status.index+1}"></td>
+                <td th:text="${these.university}"></td>
+                <td th:text="${these.faculty}"></td>
+                <td th:text="${these.level}"></td>
+                <td th:text="${these.subject}"></td>
+                <td th:text="${these.theseDate}"></td>
+                <td>
+                    <a th:href="'#'+${these.theseId}"  alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="'#'+${these.theseId}"   class="detailLink" alt="detail"><i class="zmdi zmdi-eye" data-toggle="modal" data-target="#detail"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-            <!--pagination-->
-            <div th:if="${theses.totalPages > 0}" class="pagination row justify-content-end" th:each="pageNumber : ${pageNumbers}">
-                <a th:href="@{/these(size=${theses.size}, page=${pageNumber})}" th:text=${pageNumber} th:class="${pageNumber==theses.number + 1} ? active"></a>
-            </div>
-            <!--pagination-->
-     </div>
+        <!--pagination-->
+        <div th:if="${theses.totalPages > 0}" class="pagination row justify-content-end" th:each="pageNumber : ${pageNumbers}">
+            <a th:href="@{/these(size=${theses.size}, page=${pageNumber})}" th:text=${pageNumber} th:class="${pageNumber==theses.number + 1} ? active"></a>
+        </div>
+        <!--pagination-->
+    </div>
     <!-- showing theses-->
     <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addThese">
         <i class="zmdi zmdi-plus"></i>
@@ -149,9 +149,15 @@
                             <span class='error' id="assistantError"></span>
                             <input type="text" name="assistant" id="assistant" placeholder="Nom de l'assistant" />
                         </div>
-                        <div class="form-group form-button">
-                            <input type="submit" id="submit" style="width:100%;" name="saveThese"  class="form-submit"
-                                   value="Valider" />
+                        <div class="form-group row form-button">
+                            <div class="col-6">
+                                <button data-dismiss="modal" style="width:100%;" class="btn btn-danger"
+                                   >Cancel</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="submit" id="submit" style="width:100%;" name="saveThese"  class="btn btn-success"
+                                  >Valider</button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-6">
@@ -160,13 +166,13 @@
                                 <h4>Bibliographie</h4>
                                 <ul class="list-group" id="bibliographyList">
                                 </ul>
-                                <input type="text" style="display:none;" name="bibliography" id="bibliography" placeholder="Bibliographie" />
+                                <input type="text" value="" style="display:none;" name="bibliography" id="bibliography" placeholder="Bibliographie" />
                                 <button style="width:100%"  data-toggle="modal" data-target="#addBibliography"
                                         class="img-upload" type="button" id="addBibliographyBtn">+</button>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <input type="text" name="library" style="display:none" id="library" placeholder="Bibliothèque" />
+                            <input type="text" value="" name="library" style="display:none" id="library" placeholder="Bibliothèque" />
 
                             <div class="col-12">
                                 <h4>Bibliothèque</h4>
@@ -225,7 +231,7 @@
                     <button type="button" class="btn btn-danger rounded-circle" style="width:3rem" data-dismiss="modal">
                         <i class="zmdi zmdi-close"></i>
                     </button>
-                    <button type="button" id="confirmLibraryAdding" class="btn btn-primary rounded-circle" style="width:3rem" data-toggle="modal" data-target="#addThese">
+                    <button type="button" id="confirmLibraryAdding" class="btn btn-primary rounded-circle" style="width:3rem">
                         <i class="zmdi zmdi-check"></i>
                         </i>
                     </button>
@@ -241,24 +247,50 @@
         <div class=" modal-dialog modal-dialog-centered" style="max-width: inherit" role="document">
             <div class=" detailCard card text-center" style="padding:2rem">
                 <div class="modal-content" style="border:none;">
-                <h3 class="detailTitle">2018 UNIVERSITE DE MAROUA 1 FACULTE D'ECONOMIE</h3>
-                    <div class="text-right">
-                        <button  class="btn btn-danger"><i class="zmdi zmdi-delete zmdi-hc-2x" style="color:white;"></i></button>&nbsp;&nbsp;&nbsp;
-                        <button data-dismiss="modal" class="btn btn-primary"><i class="zmdi zmdi-close zmdi-hc-2x" style="color:white;"></i></button>
+                       <div class="text-right">
+                        <i class="zmdi zmdi-delete zmdi-hc-2x" style="color:red;"></i>&nbsp;&nbsp;&nbsp;
+                        <i data-dismiss="modal" class="zmdi zmdi-close zmdi-hc-2x" style="color:green;"></i>
                     </div>
-                    
-                            <div class="row justify-content-between">
-                        <div>
-                            <strong class="detailOption">Option: </strong> Gestion Financiere
-                        </div>
-                        <div>
-                            <strong class="detailLevel">Niveau: </strong> Master 2
-                        </div>
-                    </div>
-                    <h3 class="detailSubjectSommaire">Sujet et sommaire</h3>
-                    <h4 class="detailSubject">Sujet</h4>
-                    Commercialisation des produits de beauté
+                    <h3>Université et localisation</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Université</th>
+                            <th>Faculté</th>
+                            <th>Option</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td id="detailDate"></td>
+                            <td id="detailUniversity"></td>
+                            <td id="detailFaculty"></td>
+                            <td id="detailOption"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Niveau</th>
+                            <th>Pays</th>
+                            <th>Region</th>
+                            <th>Sujet</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td id="detailLevel"></td>
+                            <td id="detailCountry"></td>
+                            <td id="detailRegion"></td>
+                            <td id="detailSubject"></td>
+                        </tr>
+                        </tbody>
+                    </table>
                     <div class="detailabstract"><h4>Sommaire</h4></div>
+                    <div><img src="" id="detailAbstract" alt="sommaire"></div>
                     <h3 class="detailStudents">Etudiant et équipe directrice</h3>
                     <table class="table table-bordered">
                         <thead>
@@ -271,10 +303,10 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>Neword Newcom</td>
-                            <td>Neword Newcom</td>
-                            <td>Neword Newcom</td>
-                            <td>Neword Newcom</td>
+                            <td id="detailStudent"></td>
+                            <td id="detailProf"></td>
+                            <td id="detailChiefOfWork"></td>
+                            <td id="detailAssistant"></td>
                         </tr>
                         </tbody>
                     </table>
@@ -282,20 +314,13 @@
                     <div class="row ">
                         <div class=" col-6 detailBibliography">
                             <h4>Bibliographie</h4>
-                            <ul class="list-group">
-                                <li class="list-group-item">Appolinaires, la joconde 1980</li>
-                                <li class="list-group-item">Appolinaires, la joconde 1980</li>
-                                <li class="list-group-item">Appolinaires, la joconde 1980</li>
-                                <li class="list-group-item">Appolinaires, la joconde 1980</li>
+                            <ul class="list-group" id="detailBibliography">
                             </ul>
                         </div>
                         <div class="detailLibrary col-6">
                             <h4>Bibliothèque</h4>
-                            <ul class="list-group">
-                                <li class="list-group-item"><a href="http://www.google.com">http://www.google.com</a></li>
-                                <li class="list-group-item"><a href="http://www.google.com">http://www.google.com</a></li>
-                                <li class="list-group-item"><a href="http://www.google.com">http://www.google.com</a></li>
-                                <li class="list-group-item"><a href="http://www.google.com">http://www.google.com</a></li>
+                            <ul class="list-group" id="detailLibrary">
+
                             </ul>
                         </div>
                     </div>
@@ -310,11 +335,11 @@
     <script th:src="@{/vendor/bootstrap-4.1/bootstrap.min.js}"></script>
     <script th:src="@{/js/dashboard.js}"></script>
     <script th:src="@{/js/showTheses.js}"></script>
-    
+
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <script src="/js/dashboard.js"></script>
-    <script src="/js/showTheses.js"></script>
+     <script th:src="/js/dashboard.js"></script>
+    <script th:src="/js/showTheses.js"></script>
     <!-- scripts-->
 
 </body>
