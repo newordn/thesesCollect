@@ -63,14 +63,14 @@
             </thead>
             <tbody>
             <tr th:each="these, status: ${theses}">
-                <td th:text="${status.index}"></td>
+                <td th:text="${status.index+1}"></td>
                 <td th:text="${these.university}"></td>
                 <td th:text="${these.faculty}"></td>
                 <td th:text="${these.level}"></td>
                 <td th:text="${these.subject}"></td>
                 <td th:text="${these.theseDate}"></td>
                 <td>
-                    <a th:href="${these.id}" href="#" alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="${these.theseId}" href="#" alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                     <i class="zmdi zmdi-eye" data-toggle="modal" data-target="#detail"></i>
                 </td>
             </tr>
