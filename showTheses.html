@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -16,6 +15,7 @@
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
     <link href="css/addTheses.css" rel="stylesheet">
+</head>
 <body class="row">
     <!-- sidebar-->
         <div class="col-1 sidebar">
@@ -39,7 +39,7 @@
         </nav>
         <!-- showing theses-->
             <div class="row content">
-                <table class="table table-bordered">
+                <table class="table table-bordered text-center">
                     <thead>
                         <tr>
                             <th>Numéro</th>
@@ -59,94 +59,14 @@
                             <td>Niveau</td>
                             <td>Thème</td>
                             <td>Année</td>
-                            <td class="text-center">
+                            <td>
                                 <a href="/user/update/1" alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <i class="zmdi zmdi-eye" data-toggle="modal" data-target="#detail"></i>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <div class=" modal fade" id="addThese" tabindex="-1" role="dialog">
-                    <div class=" modal-dialog-centered" style="box-sizing: content-box" role="document">
-                        <form class="add-these-form card text-center" enctype="multipart/form-data" method="post" action="http://192.168.8.100:8080/user/post/create">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <span class='error' id="universityError"></span>
-                                        <input type="text" name="university" id="university" placeholder="Université/Ecole" />
-                                    </div>
-                    
-                                    <div class="form-group">
-                                        <span class='error' id="facultyError"></span>
-                                        <input type="text" name="faculty" id="faculty" placeholder="Faculté/Discipline" />
-                                    </div>
-                                    <div class="form-group">
-                                        <span class='error' id="optionError"></span>
-                                        <input type="text" name="option" id="option" placeholder="Option" />
-                                    </div>
-                                    <div class="form-group">
-                                        <span class='error' id="levelError"></span>
-                                        <input type="text" name="level" id="level" placeholder="Niveau" />
-                                    </div>
-                                    <div class="form-group">
-                                        <span class='error' id="subjectError"></span>
-                                        <input type="text" name="subject" id="subject" placeholder="Sujet/Thème" />
-                                    </div>
-                                    <div class="img-upload-div">
-                                        <input class="img-input" type="text" id="abstract" placeholder="Sommaire">
-                                        <button class="img-upload" type="button" id="addButton">+</button>
-                                        <input type="file" name="resume" id="abstract_file" style="display:none">
-                                    </div>
-                                    <div class="form-group">
-                                        <span class='error' id="regionError"></span>
-                                        <input type="text" name="region" id="region" placeholder="Région" />
-                                    </div>
-                                    <div class="form-group">
-                                        <span class='error' id="studentError"></span>
-                                        <input type="text" name="student" id="student" placeholder="Nom de l'étudiant" />
-                                    </div>
-                                    <div class="form-group ">
-                                        <span class='error' id="profError"></span>
-                                        <input type="text" name="prof" id="prof" placeholder="Nom de l'encadreur/prof" />
-                                    </div>
-                                    <div class="form-group">
-                                        <span class='error' id="workChiefError"></span>
-                                        <input type="text" name="workChief" id="workChief" placeholder="Nom du chef des travaux" />
-                                    </div>
-                                    <div class="form-group">
-                                        <span class='error' id="assistantError"></span>
-                                        <input type="text" name="assistant" id="assistant" placeholder="Nom de l'assistant" />
-                                    </div>
-                                    <div class="form-group form-button">
-                                        <input type="submit" id="submit" style="width:100%;" name="saveThese" id="saveThese" class="form-submit" value="Valider" />
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <h4>Bibliographie</h4>
-                                            <ul class="list-group" id="bibliographyList">
-                                            </ul>
-                                            <input type="text" style="display:none;" name="bibliography" id="bibliography" placeholder="Bibliographie" />
-                                            <button style="width:100%" style="display:none;" data-toggle="modal" data-target="#addBibliography" class="img-upload" type="button" id="addBibliographyBtn">+</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">   
-                                            <input type="text" name="library" style="display:none" id="library" placeholder="Bibliothèque" />
-                                        
-                                        <div class="col-12">
-                                            <h4>Bibliothèque</h4>
-                                            <ul class="list-group" id="libraryList">
-                                            </ul>
-                                            <button style="width:100%" data-toggle="modal" type="button" data-target="#addLibrary"  class="img-upload" id="addlibraryBtn">+</button>
-                                        </div>
-                                            
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+
             <!--pagination-->
             <div th:if="${theses.totalPages > 0}" class="pagination row justify-content-end" th:each="pageNumber : ${pageNumbers}">
                 <a th:href="@{/these(size=${theses.size}, page=${pageNumber})}" th:text=${pageNumber} th:class="${pageNumber==thesesPage.number + 1} ? active"></a>
@@ -154,54 +74,148 @@
             <!--pagination-->
             </div>
         <!-- showing theses-->
-
         <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addThese">
             <i class="zmdi zmdi-plus"></i>
             </i>
         </button>
-        <div class=" modal fade" id="addBibliography" tabindex="-2" role="dialog">
-            <div class=" modal-dialog  modal-dialog-centered" style="box-sizing: content-box" role="document">
-                <form class="modal-content card " style="padding:2rem;">
-                    <div class="form-group">
-                        <input type="text" id="bibliographyAuthor" placeholder="Auteur" />
+
+    <!--addThese-->
+    <div class=" modal fade" id="addThese" tabindex="-1" role="dialog">
+        <div class=" modal-dialog-centered" style="box-sizing: content-box" role="document">
+            <form class="add-these-form card text-center" enctype="multipart/form-data" method="post" action="http://192.168.8.100:8080/user/post/create">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <span class='error' id="universityError"></span>
+                            <input type="text" name="university" id="university" placeholder="Université/Ecole" />
+                        </div>
+    
+                        <div class="form-group">
+                            <span class='error' id="facultyError"></span>
+                            <input type="text" name="faculty" id="faculty" placeholder="Faculté/Discipline" />
+                        </div>
+                        <div class="form-group">
+                            <span class='error' id="optionError"></span>
+                            <input type="text" name="option" id="option" placeholder="Option" />
+                        </div>
+                        <div class="form-group">
+                            <span class='error' id="levelError"></span>
+                            <input type="text" name="level" id="level" placeholder="Niveau" />
+                        </div>
+                        <div class="form-group">
+                            <span class='error' id="subjectError"></span>
+                            <input type="text" name="subject" id="subject" placeholder="Sujet/Thème" />
+                        </div>
+                        <div class="img-upload-div">
+                            <input class="img-input" type="text" id="abstract" placeholder="Sommaire">
+                            <button class="img-upload" type="button" id="addButton">+</button>
+                            <input type="file" name="resume" id="abstract_file" style="display:none">
+                        </div>
+                        <div class="form-group">
+                            <span class='error' id="regionError"></span>
+                            <input type="text" name="region" id="region" placeholder="Région" />
+                        </div>
+                        <div class="form-group">
+                            <span class='error' id="studentError"></span>
+                            <input type="text" name="student" id="student" placeholder="Nom de l'étudiant" />
+                        </div>
+                        <div class="form-group ">
+                            <span class='error' id="profError"></span>
+                            <input type="text" name="prof" id="prof" placeholder="Nom de l'encadreur/prof" />
+                        </div>
+                        <div class="form-group">
+                            <span class='error' id="workChiefError"></span>
+                            <input type="text" name="workChief" id="workChief" placeholder="Nom du chef des travaux" />
+                        </div>
+                        <div class="form-group">
+                            <span class='error' id="assistantError"></span>
+                            <input type="text" name="assistant" id="assistant" placeholder="Nom de l'assistant" />
+                        </div>
+                        <div class="form-group">
+                            <span class='error' id="dateError"></span>
+                            <input type="date" name="dateThese" id="dateThese" placeholder="La date" />
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" id="submit" style="width:100%;" name="saveThese" id="saveThese" class="form-submit"
+                                value="Valider" />
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="bibliographyTitle" placeholder="Titre" />
+                    <div class="col-6">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <h4>Bibliographie</h4>
+                                <ul class="list-group" id="bibliographyList">
+                                </ul>
+                                <input type="text" style="display:none;" name="bibliography" id="bibliography" placeholder="Bibliographie" />
+                                <button style="width:100%" style="display:none;" data-toggle="modal" data-target="#addBibliography"
+                                    class="img-upload" type="button" id="addBibliographyBtn">+</button>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <input type="text" name="library" style="display:none" id="library" placeholder="Bibliothèque" />
+    
+                            <div class="col-12">
+                                <h4>Bibliothèque</h4>
+                                <ul class="list-group" id="libraryList">
+                                </ul>
+                                <button style="width:100%" data-toggle="modal" type="button" data-target="#addLibrary"
+                                    class="img-upload" id="addlibraryBtn">+</button>
+                            </div>
+    
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="bibliographyContent" placeholder="Description" />
-                    </div>
-                    <div class="text-right">
-                        <button type="button" class="btn btn-danger rounded-circle" style="width:3rem"
-                            data-dismiss="modal">
-                            <i class="zmdi zmdi-close"></i>
-                        </button>
-                        <button type="button" id="confirmBibliographyAdding" class="btn btn-primary rounded-circle" style="width:3rem">
-                            <i class="zmdi zmdi-check"></i>
-                            </i>
-                        </button>
-                    </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
-        <div class=" modal fade" id="addLibrary" tabindex="-2" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" style="box-sizing: content-box" role="document">
-                <form class="modal-content card " style="padding:2rem;">
-                    <div class="form-group">
-                        <input type="text" id="libraryContent" placeholder="Lien" />
-                    </div>
-                    <div class="text-right">
-                        <button type="button" class="btn btn-danger rounded-circle" style="width:3rem" data-dismiss="modal">
-                            <i class="zmdi zmdi-close"></i>
-                        </button>
-                        <button type="button" id="confirmLibraryAdding" class="btn btn-primary rounded-circle" style="width:3rem" data-toggle="modal" data-target="#addThese">
-                            <i class="zmdi zmdi-check"></i>
-                            </i>
-                        </button>
-                    </div>
-                </form>
+    </div>
+    <!-- addThese-->
+        <!-- addBibliography-->
+            <div class=" modal fade" id="addBibliography" tabindex="-2" role="dialog">
+                <div class=" modal-dialog  modal-dialog-centered" style="box-sizing: content-box" role="document">
+                    <form class="modal-content card " style="padding:2rem;">
+                        <div class="form-group">
+                            <input type="text" id="bibliographyAuthor" placeholder="Auteur" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="bibliographyTitle" placeholder="Titre" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="bibliographyContent" placeholder="Description" />
+                        </div>
+                        <div class="text-right">
+                            <button type="button" class="btn btn-danger rounded-circle" style="width:3rem"
+                                data-dismiss="modal">
+                                <i class="zmdi zmdi-close"></i>
+                            </button>
+                            <button type="button" id="confirmBibliographyAdding" class="btn btn-primary rounded-circle" style="width:3rem">
+                                <i class="zmdi zmdi-check"></i>
+                                </i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
+        <!-- addBibliography-->
+        <!-- addLibrary-->
+            <div class=" modal fade" id="addLibrary" tabindex="-2" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" style="box-sizing: content-box" role="document">
+                    <form class="modal-content card " style="padding:2rem;">
+                        <div class="form-group">
+                            <input type="text" id="libraryContent" placeholder="Lien" />
+                        </div>
+                        <div class="text-right">
+                            <button type="button" class="btn btn-danger rounded-circle" style="width:3rem" data-dismiss="modal">
+                                <i class="zmdi zmdi-close"></i>
+                            </button>
+                            <button type="button" id="confirmLibraryAdding" class="btn btn-primary rounded-circle" style="width:3rem" data-toggle="modal" data-target="#addThese">
+                                <i class="zmdi zmdi-check"></i>
+                                </i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <!-- addLibrary-->
         <!-- these detail -->
             <div class="modal fade" id="detail" tabindex="-1" role="dialog">
                 <div class=" modal-dialog-centered" style="box-sizing: content-box" role="document">
@@ -264,9 +278,12 @@
                  </div>
             </div>
         <!-- these detail-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <script src="js/dashboard.js"></script>
+
+        <!-- scripts-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+            <script src="js/dashboard.js"></script>
+        <!-- scripts-->
 
 </body>
 
