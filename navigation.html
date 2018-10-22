@@ -1,0 +1,11 @@
+<!--navigation -->
+<nav class="nav" style="width:100%">
+    <div>
+        <img class="profile-img" th:src="${session.avatar}" alt="avatar">
+    </div>
+    <select class="log-out">
+        <option th:text="${session.name}"></option>
+        <option>Deconnexion</option>
+    </select>
+</nav>
+<!-- navigation -->
