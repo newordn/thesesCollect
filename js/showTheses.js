@@ -1,6 +1,3 @@
-
-
-
 $.each(document.getElementsByClassName("detailLink"),(i,v)=>{
     v.addEventListener("click",()=>{
     $.ajax({
