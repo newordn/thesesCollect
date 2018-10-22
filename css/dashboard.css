@@ -38,14 +38,6 @@ html,body
     background-color: #5d99c6;
     padding:0 !important;
 }
-.log-out
-{
-    color:white;
-    background:transparent;
-    margin-left:.5rem;
-    margin-right:.5rem;
-    border:none;
-}
 .content
 {
     padding:2rem;
