@@ -71,7 +71,6 @@
                 <td th:text="${these.subject}"></td>
                 <td th:text="${these.theseDate}"></td>
                 <td>
-                    <a th:href="'#'+${these.theseId}"  alt="modifier"><i class="zmdi zmdi-brush"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                     <a th:href="'#'+${these.theseId}"   class="detailLink" alt="detail"><i class="zmdi zmdi-eye" data-toggle="modal" data-target="#detail"></i></a>
                 </td>
             </tr>
@@ -248,8 +247,9 @@
             <div class=" detailCard card text-center" style="padding:2rem">
                 <div class="modal-content" style="border:none;">
                        <div class="text-right">
-                        <i class="zmdi zmdi-delete zmdi-hc-2x" style="color:red;"></i>&nbsp;&nbsp;&nbsp;
-                        <i data-dismiss="modal" class="zmdi zmdi-close zmdi-hc-2x" style="color:green;"></i>
+                           <i class="zmdi zmdi-delete zmdi-hc-2x" style="color:red;"></i>&nbsp;&nbsp;&nbsp;
+                           <a th:href="'#'+${these.theseId}" alt="modifier"><i class="zmdi zmdi-brush zmdi-hc-2x" style="color:blue;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i data-dismiss="modal" class="zmdi zmdi-close zmdi-hc-2x" style="color:green;"></i>
                     </div>
                     <h3>Université et localisation</h3>
                     <table class="table table-bordered">
@@ -336,10 +336,10 @@
     <script th:src="@{/js/dashboard.js}"></script>
     <script th:src="@{/js/showTheses.js}"></script>
 
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <script src="/js/dashboard.js"></script>
-    <script src="/js/showTheses.js"></script>
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="./js/dashboard.js"></script>
+    <script src="./js/showTheses.js"></script>
     <!-- scripts-->
 
 </body>
