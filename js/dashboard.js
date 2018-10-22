@@ -1,5 +1,6 @@
 $("#img").mouseenter(
     ()=>{
+        $("#upload").css("opacity", 1);
     }
 )
 $("#img").mouseleave(
