@@ -115,6 +115,10 @@ select
 {
     position: relative;
 }
+.profile-img-div:hover
+{
+    cursor:pointer;
+}
 .roles
 {
     border:1px solid rgb(220,220,220);
