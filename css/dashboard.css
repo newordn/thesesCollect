@@ -44,6 +44,7 @@ html,body
     background:transparent;
     margin-left:.5rem;
     margin-right:.5rem;
+    border:none;
 }
 .content
 {
