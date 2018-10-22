@@ -1,7 +1,8 @@
 <!--navigation -->
 <nav class="nav" style="width:100%" xmlns:th="http://www.w3.org/1999/xhtml" th:fragment="navigation">
+    <a th:href="@{/user}" style="color:white">Utilisateur</a>&nbsp;&nbsp;
     <div th:if="${session.avatar}">
-        <img class="profile-img" th:src="${session.avatar}" alt="avatar">
+        <img class="profile-img" th:src="${session.avatar}" alt="avatar">&nbsp;&nbsp;
     </div>
     <div th:unless="${session.avatar}">
         <img class="profile-img" src="images/avatar.png" alt="avatar">

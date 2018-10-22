@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Neword">
+
+    <!-- Title Page-->
+    <title>Theses Collection</title>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="./css/addTheses.css" rel="stylesheet">
+<body class="row">
+    <div class="col-12 main">
+        <nav class="nav" style="width:100%">
+            <a th:href="@{/user}" style="color:white">Utilisateurs</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <div>
+                <img class="profile-img" src="images/avatar.png" alt="avatar">&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <select class="log-out">
+                <option>Neword Orquel</option>
+                <option>Deconnexion</option>
+            </select>
+        </nav>
+        <h2 class="text-center mt-3">Les groupes</h2>
+        <div class="row content mt-3">
+            <div class="col-3 card text-center" th:each="${crew : $crews}" style="padding:.5rem;">
+                <div class="card-title"><strong th:text="${crew.name}">Nom du groupe</strong></div>
+                <div>
+                    <strong>Pays: </strong><span th:text="${crew.country}">Cameroun</span><br>
+                    <strong>Region: </strong><span th:text="${crew.region}">Extreme nord</span><br>
+                    <strong>Chef: </strong><span th:text="${crew.admin}">Maurice Kamto</span><br>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addThese">
+            <i class="zmdi zmdi-plus zmdi-hc-2x"></i>
+            </i>
+        </button>
+    </div>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js" type="module"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
