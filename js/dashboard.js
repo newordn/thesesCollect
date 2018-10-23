@@ -9,19 +9,42 @@ $("#img").mouseleave(
     }
 )
 // rigths radio button listeners
+
+if ($("#right").val() == 1) {
+    $('#root').attr("checked", true);
+}
+else if ($("#right").val() == 2) {
+    $('#admin').attr("checked", true);
+}
+else
+    $('#user').attr("checked", true);
+
+
+$("#right").change(() => {
+    if ($(this).val() == 1) {
+        $('#root').attr("checked", true);
+    }
+    else if ($(this).val() == 2) {
+        $('#admin').attr("checked", true);
+    }
+    else
+        $('#user').attr("checked", true);
+
+})
+
 $('input:radio[name="role"]').change(
     function () {
         if ($(this).is(':checked') && $(this).val() == 'user') {
-            $("#right").val("user");
+            $("#right").val(3);
             console.log("user")
         }
         else if ($(this).is(':checked') && $(this).val() == 'admin') {
-            $("#right").val("admin");
+            $("#right").val(2);
             console.log("admin")
         }
         else
         {
-            $("#right").val("root");
+            $("#right").val(1);
             console.log("root");
         }
         });
