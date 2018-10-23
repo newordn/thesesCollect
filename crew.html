@@ -37,14 +37,60 @@
                 </div>
             </div>
         </div>
-        <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addThese">
+        <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addCrew">
             <i class="zmdi zmdi-plus zmdi-hc-2x"></i>
             </i>
         </button>
+        <!--addThese-->
+        <div class=" modal fade" id="addCrew" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered role="document">
+                <form class="add-these-form modal-content card text-center" enctype="multipart/form-data" method="post"
+                    th:action="@{/these/add/create}">
+                    <!-- user id -->
+                    <input type="number" name="userId" th:value="${session.userId}" style="display:none">
+                    <!-- user id -->
+                    <div class="row pt-3">
+                            <div class="form-group" style="width: 100%">
+                                <span class='error' id="nameError"></span>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Nom du groupe" />
+                            </div>
+        
+                            <div class="form-group" style="width: 100%">
+                                <span class='error' id="countryError"></span>
+                                <input type="text" name="country" id="country" class="form-control" placeholder="Pays" />
+                            </div>
+                            <div class="form-group" style="width: 100%">
+                                <span class='error' id="regionError"></span>
+                                <input type="text" name="region" id="region" class="form-control" placeholder="Région" />
+                            </div>
+                            <div class="form-group">
+                                <strong>Chef du groupe : </strong>
+                                <select name="admin">
+                                    <option th:each="user : ${users}" class="form-control" th:text="$user.name">Nounamo Patrick</option>
+                                </select>
+                               
+                            </div>
+                            <div class="form-group row form-button" style="width: 100%">
+                                <div class="col-6">
+                                    <button data-dismiss="modal" style="width:100%;" class="btn btn-danger">Cancel</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="submit" id="submit" style="width:100%;" name="saveThese" class="btn btn-success">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+        
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- addCrew-->
     </div>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js" type="module"></script>
-    <script src="js/dashboard.js"></script>
+        <script src="./vendor/jquery/jquery.min.js"></script>
+        <script src="./vendor/bootstrap-4.1/bootstrap.min.js"></script>
+        <script src="./js/dashboard.js"></script>
+        <script src="./js/showTheses.js"></script>
 </body>
 
 </html>
