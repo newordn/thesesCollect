@@ -12,3 +12,8 @@
     opacity:0.7;
     cursor: pointer;
 }
+
+.user:hover .upload
+{
+    opacity: 1;
+}

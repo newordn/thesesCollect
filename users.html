@@ -77,7 +77,35 @@
                 </div>
                 </a>
             </div>
+            <div class="col-3" th:each="user: ${users}">
+                <a href="@{/user/update} + ${user.id}">
+                    <div class="user card">
+                        <div class="profile-img-div">
+                            <i class="zmdi zmdi-edit upload" id="upload"></i>
+                            <img class="card-img-top user-avatar" src="images/avatar.png" alt="User Avatar">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <strong>Nom: </strong><span>Neword Orquel</span>
+                                <br>
+                                <strong>Email: </strong><span>newordn@gmail.com</span>
+                                <br>
+                                <strong>Number: </strong><span>+237693063225</span>
+                                <br>
+                                <strong>Pays: </strong><span>Cameroun</span>
+                                <br>
+                                <strong>Region: </strong><span>Extreme nord</span>
+                                <br>
+                                <strong>Université: </strong><span>Maroua</span>
+                                <br>
+                                <strong>Faculté: </strong><span>Enspm</span>
+                                <br>
             
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
 
         <script src="vendor/jquery/jquery.min.js"></script>
