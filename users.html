@@ -106,6 +106,40 @@
                     </div>
                 </a>
             </div>
+                    <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addUserIntoCrew">
+                        <i class="zmdi zmdi-plus zmdi-hc-2x"></i>
+                        </i>
+                    </button>
+                    <!--addUserIntoCrew-->
+                    <div class=" modal fade" id="addUserIntoCrew" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered role=" document">
+                            <form class=" modal-content card text-center" style="padding:1rem;" method="post">
+                                <div class="form-group row">
+                                    <div class="col-6">
+                                        <button data-dismiss="modal" style="width:100%;" class="btn btn-danger">Cancel</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button type="submit" id="submit" style="width:100%;"  class="btn btn-success">Valider</button>
+                                    </div>
+                                </div>
+                                <ul class="list-group">
+                                    <li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item">
+                                        Testing
+                                    </li>
+                                    <li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item">
+                                        Testing
+                                    </li><li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item">
+                                        Testing
+                                    </li><li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item">
+                                        Testing
+                                    </li>
+                                </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- addUserIntoCrew-->
         </div>
 
         <script src="vendor/jquery/jquery.min.js"></script>
