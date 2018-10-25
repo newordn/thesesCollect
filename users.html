@@ -118,12 +118,14 @@
                                     <div class="col-6">
                                         <button data-dismiss="modal" style="width:100%;" class="btn btn-danger">Cancel</button>
                                     </div>
+                                    <input type="number" style="display: none" name="groupeId" th:value="${session.groupeId}">
+                                    <input type="text" name="usersId" id="usersId" value="" style="display:none">
                                     <div class="col-6">
                                         <button type="submit" id="submit" style="width:100%;"  class="btn btn-success">Valider</button>
                                     </div>
                                 </div>
                                 <ul class="list-group" >
-                                    <li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item user-item">
+                                    <li value="3" th:each=" user : ${users}" th:text="${user.name}" class="list-group-item user-item">
                                         Testing
                                     </li>
                                     <li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item user-item">
