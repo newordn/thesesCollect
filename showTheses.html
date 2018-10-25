@@ -84,10 +84,19 @@
         <!--pagination-->
     </div>
     <!-- showing theses-->
+    <!-- Add these button-->
     <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addThese">
         <i class="zmdi zmdi-plus"></i>
         </i>
     </button>
+    <!-- Add these button -->
+    <!-- print button-->
+        <a th:href="@{/print}" href="kk;k">
+        <button type="button" class="printButton btn btn-success ">
+           Imprimer
+        </button>
+        </a>
+    <!-- print button-->
 
     <!--addThese-->
     <div class=" modal fade" id="addThese" tabindex="-1" role="dialog">

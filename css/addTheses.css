@@ -4,6 +4,12 @@
     bottom:1rem;
     right:8%;
 }
+.printButton
+{
+    position:fixed;
+    bottom:1rem;
+    left:10%;
+}
 .add-these-form input
 {
     width:100%;
