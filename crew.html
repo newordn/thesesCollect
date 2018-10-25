@@ -31,11 +31,15 @@
         <div class="row content mt-3">
             <div class="col-3 card text-center crew" th:each="${crew : $crews}" style="padding:.5rem;">
                 <a th:href="@{/groupe/groupe/} + ${crew.groupeId}" style="color:black;cursor: pointer">
-                <div class="card-title"><strong th:text="${crew.name}">Nom du groupe</strong></div>
-                <div>
-                    <strong>Pays: </strong><span th:text="${crew.country}">Cameroun</span><br>
-                    <strong>Region: </strong><span th:text="${crew.region}">Extreme nord</span><br>
-                    <strong>Chef: </strong><span th:text="${crew.admin}">Maurice Kamto</span><br>
+                <ul class="list-group text-center">
+                    <li class="list-group-item"><strong>Nom du groupe</strong></li>
+                    <li class="list-group-item" th:text="${crew.country}"> Yaounde</li>
+                    <li class="list-group-item"><strong>Pays</strong></li>
+                    <li class="list-group-item" th:text="${crew.country}">Cameroun</li>
+                    <li class="list-group-item"><strong>Region </strong></li>
+                    <li class="list-group-item" th:text="${crew.region}">Extreme nord</li>
+                    <li class="list-group-item"><strong>Chef </strong></li>
+                    <li class="list-group-item" th:text="${crew.admin}">Maurice Kamto</li>
                 </div>
                 </a>
             </div>
