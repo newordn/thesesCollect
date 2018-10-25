@@ -122,15 +122,15 @@
                                         <button type="submit" id="submit" style="width:100%;"  class="btn btn-success">Valider</button>
                                     </div>
                                 </div>
-                                <ul class="list-group">
-                                    <li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item">
+                                <ul class="list-group" >
+                                    <li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item user-item">
                                         Testing
                                     </li>
-                                    <li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item">
+                                    <li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item user-item">
                                         Testing
-                                    </li><li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item">
+                                    </li><li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item user-item">
                                         Testing
-                                    </li><li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item">
+                                    </li><li th:each=" user : ${users}" th:text="${user.name}" class="list-group-item user-item">
                                         Testing
                                     </li>
                                 </ul>
