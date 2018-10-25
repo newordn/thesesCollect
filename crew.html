@@ -29,7 +29,7 @@
         </nav>
         <h2 class="text-center mt-3">Les groupes</h2>
         <div class="row content mt-3">
-            <div class="col-3 card text-center" th:each="${crew : $crews}" style="padding:.5rem;">
+            <div class="col-3 card text-center crew" th:each="${crew : $crews}" style="padding:.5rem;">
                 <a th:href="@{/groupe/groupe/} + ${crew.groupeId}" style="color:black;cursor: pointer">
                 <div class="card-title"><strong th:text="${crew.name}">Nom du groupe</strong></div>
                 <div>
