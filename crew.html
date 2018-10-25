@@ -33,13 +33,13 @@
                 <a th:href="@{/groupe/groupe/} + ${crew.groupeId}" style="color:black;cursor: pointer">
                 <ul class="list-group text-center">
                     <li class="list-group-item active"><strong>Nom du groupe</strong></li>
-                    <li class="list-group-item" th:text="${crew.name}"> Yaounde</li>
+                    <li class="list-group-item" th:text="${crew.groupeName}"> Yaounde</li>
                     <li class="list-group-item active"><strong>Pays</strong></li>
-                    <li class="list-group-item" th:text="${crew.country}">Cameroun</li>
+                    <li class="list-group-item" th:text="${crew.groupeCountry}">Cameroun</li>
                     <li class="list-group-item active"><strong>Region </strong></li>
-                    <li class="list-group-item" th:text="${crew.region}">Extreme nord</li>
+                    <li class="list-group-item" th:text="${crew.groupeRegion}">Extreme nord</li>
                     <li class="list-group-item active"><strong>Chef </strong></li>
-                    <li class="list-group-item" th:text="${crew.admin}">Maurice Kamto</li>
+                    <li class="list-group-item" th:text="${crew.groupChief}">Maurice Kamto</li>
                 </ul>
                 </div>
                 </a>
