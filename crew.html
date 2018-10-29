@@ -29,18 +29,20 @@
         </nav>
         <h2 class="text-center mt-3">Les groupes</h2>
         <div class="row content mt-3">
-            <div class="col-3 card text-center crew" th:each="${crew : $crews}" style="padding:.3rem;">
+            <div class="col-3 text-center crew" th:each="${crew : $crews}" style="padding:.3rem;">
                 <a th:href="@{/groupe/groupe/} + ${crew.groupeId}" style="color:black;cursor: pointer">
-                <ul class="list-group text-center">
-                    <li class="list-group-item active"><strong>Nom du groupe</strong></li>
-                    <li class="list-group-item" th:text="${crew.groupeName}"> Yaounde</li>
-                    <li class="list-group-item active"><strong>Pays</strong></li>
-                    <li class="list-group-item" th:text="${crew.groupeCountry}">Cameroun</li>
-                    <li class="list-group-item active"><strong>Region </strong></li>
-                    <li class="list-group-item" th:text="${crew.groupeRegion}">Extreme nord</li>
-                    <li class="list-group-item active"><strong>Chef </strong></li>
-                    <li class="list-group-item" th:text="${crew.groupChief}">Maurice Kamto</li>
-                </ul>
+                <div class="card">
+                    <div style="background-color:teal; color:white">
+                        <span th:text="${crew.groupeName}"> Yaounde</span>
+                        <div class="card-img-top" style="color:white;line-height:5rem;font-size:5rem;background-color:lightseagreen;border-radius: 50%;width:5rem;margin:auto;height: 5rem;">Y</div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6">Cameroun</div>
+                        <div class="col-6">Extreme nord</div>
+                    </div>
+                    <strong  th:text="${crew.groupChief}">Maurice Kamto</strong>
+                </div>
                 </div>
                 </a>
             </div>
