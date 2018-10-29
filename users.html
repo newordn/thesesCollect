@@ -51,8 +51,9 @@
             <div class="col-3" th:each="user: ${users}">
                 <a href="@{/user/update} + ${user.id}">
                 <div class="user card">
+                    <div style="z-index: 1000;position: absolute;width: 100%" class="text-right delete "><a th:href="@{/user/delete/} + ${user.id}" class="btn btn-danger rounded-circle"><i class="zmdi zmdi-close" ></i></a></div>
                     <div class="profile-img-div">
-                        <i class="zmdi zmdi-edit upload" id="upload"></i>
+                        <i class="zmdi zmdi-edit upload" id="upload" style="color:green"></i>
                         <img class="card-img-top user-avatar" src="images/avatar.png" alt="User Avatar">
                     </div>
                     <div class="card-body">

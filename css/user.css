@@ -13,10 +13,15 @@
     cursor: pointer;
 }
 
-.user:hover .upload
+.user:hover .upload, .user:hover .delete
 {
     opacity: 1;
 }
+.delete
+{
+    opacity:0;
+}
+
 .user-item
 {
     cursor:pointer;
