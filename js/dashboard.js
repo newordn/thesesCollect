@@ -39,3 +39,8 @@ function handleImg() {
     $("#abstract").val(img.name);
 }
 });
+
+// submitting update form
+$("#confirmOldPass").click(()=>{
+    $("#submit").click();
+})
