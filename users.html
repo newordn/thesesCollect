@@ -49,12 +49,18 @@
         
         <div class="row justify-content-center content">
             <div class="col-3" th:each="user: ${users}">
-                <a href="@{/user/update} + ${user.id}">
+               
                 <div class="user card">
-                    <div style="z-index: 1000;position: absolute;width: 100%" class="text-right delete "><a th:href="@{/user/delete/} + ${user.id}" class="btn btn-danger rounded-circle"><i class="zmdi zmdi-close" ></i></a></div>
+                    <div style="z-index: 1000;position: absolute;width: 100%" class="text-right delete ">
+                            <div>
+                                <input type="hidden" value="admin">
+                            <a href="#1" class="btn btn-success updateRoleBtn" data-toggle="modal" data-target="#updateRole">
+                                <i class="zmdi zmdi-edit"></i>
+                            </a>
+                            </div>
+                        <a th:href="@{/user/delete/} + ${user.id}" class="btn btn-danger rounded-circle"><i class="zmdi zmdi-close" ></i></a></div>
                     <div class="profile-img-div">
-                        <i class="zmdi zmdi-edit upload" id="upload" style="color:green"></i>
-                        <img class="card-img-top user-avatar" src="images/avatar.png" alt="User Avatar">
+                          <img class="card-img-top user-avatar" src="images/avatar.png" alt="User Avatar">
                     </div>
                     <div class="card-body">
                         <div class="card-text">
@@ -72,41 +78,13 @@
                                         <br>
                             <strong>Faculté: </strong><span>Enspm</span>
                                         <br>
-                            
+                            <strong>Permission: </strong><span>Enspm</span>
+                            <br>
                         </div>
                     </div>
                 </div>
-                </a>
             </div>
-            <div class="col-3" th:each="user: ${users}">
-                <a href="@{/user/update} + ${user.id}">
-                    <div class="user card">
-                        <div class="profile-img-div">
-                            <i class="zmdi zmdi-edit upload" id="upload"></i>
-                            <img class="card-img-top user-avatar" src="images/avatar.png" alt="User Avatar">
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text">
-                                <strong>Nom: </strong><span>Neword Orquel</span>
-                                <br>
-                                <strong>Email: </strong><span>newordn@gmail.com</span>
-                                <br>
-                                <strong>Number: </strong><span>+237693063225</span>
-                                <br>
-                                <strong>Pays: </strong><span>Cameroun</span>
-                                <br>
-                                <strong>Region: </strong><span>Extreme nord</span>
-                                <br>
-                                <strong>Université: </strong><span>Maroua</span>
-                                <br>
-                                <strong>Faculté: </strong><span>Enspm</span>
-                                <br>
-            
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+
                     <button type="button" class="addButton btn btn-primary rounded-circle" data-toggle="modal" data-target="#addUserIntoCrew">
                         <i class="zmdi zmdi-plus zmdi-hc-2x"></i>
                         </i>
@@ -144,6 +122,30 @@
                     </div>
                     <!-- addUserIntoCrew-->
         </div>
+
+        <!-- update role-->
+            <div class=" modal fade" id="updateRole" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered role=" document">
+                    <form class=" modal-content card text-center" action="/user/update" style="padding:1rem;" method="get" id="updateRoleForm">
+                        <h5>Permissions</h5>
+                        <input type="number" style="display:none" id="updateRoleUserId" name="userId">
+                        <select name="role" class="custom-select">
+                            <option value="root" id="root">Super Administrateur</option>
+                            <option value="admin" id="admin" active>Administrateur</option>
+                            <option value="user" id="user">Utilisateur</option>
+                        </select>
+                        <div class="text-right">
+                            <button class="btn btn-danger" type="button" data-dismiss="modal" >
+                                <i class="zmdi zmdi-close"></i>
+                            </button>
+                            <button class="btn btn-success" id="confirmRoleAdding">
+                                <i class="zmdi zmdi-check"></i>
+                            </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        <!-- update role-->
 
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap-4.1/popper.min.js"></script>

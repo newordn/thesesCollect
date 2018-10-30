@@ -25,3 +25,20 @@ $.each(document.getElementsByClassName("user-item"), (i, v) => {
             $("#usersId").val($("#usersId").val() + ","+ v.getAttribute("value"));
         }
     })})
+
+    //updating role
+$.each(document.getElementsByClassName("updateRoleBtn"), (i, v) => {
+    v.addEventListener("click", () => {
+        $("#updateRoleUserId").val(v.getAttribute("href").substring(1));
+        if(v.parentNode.firstElementChild.value=="root")
+            $("#root").prop("selected","selected");
+        else if (v.parentNode.firstElementChild.value == "admin")
+            $("#admin").prop("selected", "selected");
+        else
+            $("#user").prop("selected", "selected");
+
+        })})
+
+$("#confirmRoleAdding").click(()=>{
+    $("#updateRoleForm").submit();
+})
