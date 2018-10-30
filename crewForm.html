@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Neword">
+
+    <!-- Title Page-->
+    <title>Theses Collection</title>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+<body class="row">
+    <div class="col-1 sidebar">
+        <div class="logo-div"><img alt="logo" class="logo" src="images/logo.png"></div>
+        <div class="sidebar-items">
+            <a href="/theses"><button id="thesesButton">Thèses</button></a>
+            <a href="/users"><button id="usersLink">Utilisateurs</button></a>
+            <a href="/stats"><button id="statsLink">Statistiques</button></a>
+        </div>
+    </div>
+    <div class="col main">
+        <nav class="nav" style="width:100%">
+            <div>
+                <img class="profile-img" src="images/avatar.png" alt="avatar">
+            </div>
+            <select class="log-out">
+                <option>Neword Orquel</option>
+                <option>Deconnexion</option>
+            </select>
+        </nav>
+        <h3 class="text-center mt-5">Modifier les informations du groupe</h3>
+        <div class="row justify-content-center mt-3" >
+                <form class=" card text-center p-5" style="width:40rem;" method="post">
+                        <div class="form-group" >
+                            <span class='error' id="nameError"></span>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Nom du groupe" />
+                        </div>
+                
+                        <div class="form-group" style="width: 100%">
+                            <span class='error' id="countryError"></span>
+                            <input type="text" name="country" id="country" class="form-control" placeholder="Pays" />
+                        </div>
+                        <div class="form-group" style="width: 100%">
+                            <span class='error' id="regionError"></span>
+                            <input type="text" name="region" id="region" class="form-control" placeholder="Région" />
+                        </div>
+                        <div class="form-group">
+                            <strong>Chef du groupe : </strong>
+                            <select name="admin">
+                                <option th:each="user : ${users}" class="form-control" th:text="$user.name">Nounamo Patrick</option>
+                            </select>
+                
+                        </div>
+                        <div class="form-group row form-button" style="width: 100%">
+                            <div class="col-12">
+                                <button type="submit" id="submit" style="width:100%;" name="saveThese" class="btn btn-success">Valider</button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <!-- confirm password modal-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="js/main.js" type="module"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
