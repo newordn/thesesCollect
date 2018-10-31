@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Neword">
+
+    <!-- Title Page-->
+    <title>Theses Collection</title>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+<body class="row">
+    <div class="col-1 sidebar">
+        <div class="logo-div"><img alt="logo" class="logo" src="images/logo.png"></div>
+        <div class="sidebar-items">
+            <a href="/theses"><button id="thesesButton">Thèses</button></a>
+            <a href="/users"><button id="usersLink">Utilisateurs</button></a>
+            <a href="/stats"><button id="statsLink">Statistiques</button></a>
+        </div>
+    </div>
+    <div class="col main">
+        <nav class="nav" style="width:100%">
+            <div>
+                <img class="profile-img" src="images/avatar.png" alt="avatar">
+            </div>
+            <select class="log-out">
+                <option>Neword Orquel</option>
+                <option>Deconnexion</option>
+            </select>
+        </nav>
+        <div class="row justify-content-center content">
+                <h3 class="col-12 text-center mt-3">Statistiques générales</h3>
+                
+                <div class="col-12 mt-3 card p-5">
+                    <div class="row">
+                        <div class="col-6 text-center mt-3" > 
+                            <ul class="list-group">
+                                <li class="list-group-item">20 Utilisateurs</li>
+                            </ul>
+                        </div>
+                        <div class="col-6 text-center mt-3" >
+                            <ul class="list-group">
+                                <li class="list-group-item">20 Thèses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="col-12 text-center mt-3">Statistiques par groupes</h3>
+                <div class="col-12 mt-3 card p-5">
+                    <div class="row">
+                    <div class="col-4 mb-2">
+                        <ul class="list-group text-center">
+                            <li class="list-group-item active">Cameroun</li>
+                            <li class="list-group-item"><strong>20 Utilisateurs</strong></li>
+                            <li class="list-group-item"><strong>20 Thèses</strong></li>
+                        </ul>
+                    </div>
+                    
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="js/main.js" type="module"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
