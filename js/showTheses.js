@@ -3,7 +3,7 @@ $.each(document.getElementsByClassName("detailLink"),(i,v)=>{
     $.ajax({
     url: "http://localhost:8080/these/getOne/"+ v.getAttribute("href")[1]
 }).done((data)=>{
-    console.log(data);
+    
 $("#detailDate").text(data.theseDate)
 $("#detailRegion").text(data.regions)
 $("#detailUniversity").text(data.university)

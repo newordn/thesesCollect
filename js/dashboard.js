@@ -42,5 +42,13 @@ function handleImg() {
 
 // submitting update form
 $("#confirmOldPass").click(()=>{
+    $.ajax({
+        url: "http://192.168.8.103:8080/" + $("#oldPassword").val()
+    }).done((data) => {
+        if(data)
     $("#submit").click();
-})
+        else
+        {
+            $("#oldPasswordError").text("Erreur de mot de passe");
+        }
+});

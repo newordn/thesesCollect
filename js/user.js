@@ -40,5 +40,6 @@ $.each(document.getElementsByClassName("updateRoleBtn"), (i, v) => {
         })})
 
 $("#confirmRoleAdding").click(()=>{
+    
     $("#updateRoleForm").submit();
 })
