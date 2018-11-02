@@ -10,19 +10,19 @@
     <title>Theses Collection</title>
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
     <!-- thymeleaft -->
-    <link th:href="@{/css/style.css}" rel="stylesheet">
     <link th:href="@{/css/dashboard.css}" rel="stylesheet">
     <link th:href="@{/css/showTheses.css}" rel="stylesheet">
     <!-- Bootstrap CSS-->
     <link th:href="@{/vendor/bootstrap-4.1/bootstrap.min.css}" rel="stylesheet" media="all">
     <link th:href="@{/css/addTheses.css}" rel="stylesheet">
-    <!-- thymeleaft-->
-    <link href="./css/style.css" rel="stylesheet">
-    <link href="./css/dashboard.css" rel="stylesheet">
-    <link href="./css/showTheses.css" rel="stylesheet">
     <!-- Bootstrap CSS-->
     <link href="./vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
     <link href="./css/addTheses.css" rel="stylesheet">
+        <!-- thymeleaft-->
+        <link href="./css/style.css" rel="stylesheet">
+        <link href="./css/dashboard.css" rel="stylesheet">
+        <link href="./css/showTheses.css" rel="stylesheet">
+
 </head>
 <body class="row">
 <!-- sidebar-->
@@ -99,7 +99,7 @@
     <!-- print button-->
 
     <!--addThese-->
-    <div class=" modal fade" id="addThese" tabindex="-1" role="dialog">
+    <div class=" modal fade" id="addThese" tabindex="0" role="dialog">
         <div class="modal-dialog modal-dialog-centered" style="width: inherit !important;max-width: inherit !important;" role="document">
             <form class="add-these-form modal-content card text-center" enctype="multipart/form-data" method="post" th:action="@{/these/add/create}">
                 <!-- user id -->
@@ -176,7 +176,7 @@
                                 </ul>
                                 <input type="text" value="" style="display:none;" name="bibliography" id="bibliography" placeholder="Bibliographie" />
                                 <button style="width:100%"  data-toggle="modal" data-target="#addBibliography"
-                                        class="img-upload" type="button" id="addBibliographyBtn">+</button>
+                                        class="addBL img-upload" type="button" id="addBibliographyBtn">+</button>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -187,7 +187,7 @@
                                 <ul class="list-group" id="libraryList">
                                 </ul>
                                 <button style="width:100%" data-toggle="modal" type="button" data-target="#addLibrary"
-                                        class="img-upload" id="addlibraryBtn">+</button>
+                                        class="addBL img-upload" id="addlibraryBtn">+</button>
                             </div>
 
                         </div>
@@ -200,7 +200,7 @@
 
 
     <!-- addBibliography-->
-    <div class=" modal fade" id="addBibliography" tabindex="-2" role="dialog">
+    <div class=" modal fade" id="addBibliography" tabindex="0" role="dialog">
         <div class=" modal-dialog  modal-dialog-centered" style="box-sizing: content-box" role="document">
             <form class="modal-content card " style="padding:2rem;">
                 <div class="form-group">
@@ -213,8 +213,8 @@
                     <input type="text" id="bibliographyContent" placeholder="Description" />
                 </div>
                 <div class="text-right">
-                    <button type="button" class="btn btn-danger rounded-circle" style="width:3rem"
-                            data-dismiss="modal">
+                    <button type="button" class="btn secondModalClose btn-danger rounded-circle" style="width:3rem"
+                            data-dismiss="modal" >
                         <i class="zmdi zmdi-close"></i>
                     </button>
                     <button type="button" id="confirmBibliographyAdding" class="btn btn-primary rounded-circle" style="width:3rem">
@@ -229,14 +229,14 @@
 
 
     <!-- addLibrary-->
-    <div class=" modal fade" id="addLibrary" tabindex="-2" role="dialog">
+    <div class=" modal fade" id="addLibrary" tabindex="0" role="dialog">
         <div class="modal-dialog modal-dialog-centered" style="box-sizing: content-box" role="document">
             <form class="modal-content card " style="padding:2rem;">
                 <div class="form-group">
                     <input type="text" id="libraryContent" placeholder="Lien" />
                 </div>
                 <div class="text-right">
-                    <button type="button" class="btn btn-danger rounded-circle" style="width:3rem" data-dismiss="modal">
+                    <button type="button" class="btn btn-danger secondModalClose rounded-circle" style="width:3rem" data-dismiss="modal">
                         <i class="zmdi zmdi-close"></i>
                     </button>
                     <button type="button" id="confirmLibraryAdding" class="btn btn-primary rounded-circle" style="width:3rem">

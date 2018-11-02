@@ -31,3 +31,8 @@ let library = data.library.split(";");
 })
 })
 })
+
+// handling scroll overflow when closing second modal
+$(".addBL").click(()=>{
+    $("#addThese").css("overflow","scroll");
+})

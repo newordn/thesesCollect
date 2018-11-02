@@ -167,14 +167,7 @@ input:-webkit-autofill {
   color:red;
   font-style: italic;
 } 
-.logo
+.modal-open
 {
-    width:8rem;
-    height: 4rem;
-} 
-.logo-div
-{
-    background-color: rgb(195,195,195);
-    padding:0 !important;
-    text-align: center;
+    overflow: hidden !important;
 }

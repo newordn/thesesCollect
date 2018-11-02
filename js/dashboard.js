@@ -51,4 +51,4 @@ $("#confirmOldPass").click(()=>{
         {
             $("#oldPasswordError").text("Erreur de mot de passe");
         }
-});
+})})
