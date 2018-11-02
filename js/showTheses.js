@@ -22,7 +22,13 @@ $("#detailLibrary").html("");
 let bibliography = data.bibliography.split(":");
 for(let i=0;i<bibliography.length;i+=3)
 {
-    $("#detailBibliography").append("<li class='list-group-item'>" + bibliography[i] + "</li>");
+    $("#detailBibliography").append('<li class="list-group-item" '+ 
+    'data-toggle="tooltip" data-html="true"' +
+    'title="<table class="table-bordered" '+
+    'style="background-color:white;color:black">'+
+      ' <thead><th>Auteur</th><th>Titre</th><th>Description</th></thead>'+
+     '<tbody><tr><td>' + bibliography[i] + '</td><td>' + bibliography[i + 1] + '</td><td>' + bibliography[i+2] +'</td></tr></tbody></table>'
+                            + bibliography[i] + "</li>");
 }
 let library = data.library.split(";");
     for (let i = 0; i < library.length;i ++) {
@@ -35,4 +41,9 @@ let library = data.library.split(";");
 // handling scroll overflow when closing second modal
 $(".addBL").click(()=>{
     $("#addThese").css("overflow","scroll");
+})
+
+// enabling tooltips
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
 })
