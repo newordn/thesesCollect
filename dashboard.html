@@ -81,7 +81,14 @@
             <input type="faculty" name="faculty" id="faculty" placeholder="Votre Faculté" />
         </div>
     </div>
-    <div class="row">
+    <div class="col-7 p-0 justify-content-left">
+            <input type="checkbox" class="form-check-input" id="passwordToggle">
+            <label class="form-check-label" for="passwordToggle">
+                <strong>Modifier Votre Mot de passe</strong>
+            </label>
+        
+    </div>  
+    <div class="row mt-2" id="passwordInputs" style="display:none">
         <div class="col-6">
             <span class='error' id="passwordError"></span>
             <input type="password" autocomplete="" name="password" id="password" placeholder="Mot de Passe" />
@@ -91,7 +98,6 @@
             <input autocomplete="" type="password" id="repass" placeholder="Confirmation Mot de Passe" />
         </div>
     </div>
-
     <input type="file" name="file" id="file_image" style="display:none">
     <div class="save-button-div">
         <input type="submit" style="display: none" id="submit">

@@ -52,3 +52,14 @@ $("#confirmOldPass").click(()=>{
             $("#oldPasswordError").text("Erreur de mot de passe");
         }
 })})
+// toggle password update inputs
+$("#passwordToggle").change(()=>{
+    if($("#passwordToggle").is(":checked"))
+    {
+        $("#passwordInputs").css("display","flex");
+    }
+    else
+    {
+        $("#passwordInputs").css("display", "none");
+    }
+})
